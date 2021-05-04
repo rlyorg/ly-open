@@ -1,0 +1,98 @@
+version: '3'
+services:
+  # https://www.digitalocean.com/community/tutorials/how-to-set-up-laravel-nginx-and-mysql-with-docker-compose
+  #PHP Service
+  app:
+    image: guoxiangke/ly-open
+    links:
+      - db:mysql
+      - redis
+    build:
+      context: .
+      dockerfile: "Dockerfile${DOCKER_ENV}"
+    restart: unless-stopped
+    ports:
+      - "8008:80"
+    environment:
+      CONTAINER_ROLE: app
+      REDIS_PORT: 6379
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
+    volumes:
+      - ./docker/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - .env.docker:/var/www/html/.env
+      - public:/var/www/html/public
+      # - ./public:/var/www/html/public ## for FE develop in local.
+      - ./app:/var/www/html/app
+      - ./config:/var/www/html/config
+      - ./resources:/var/www/html/resources
+      - ./routes:/var/www/html/routes
+      - ./storage/app:/var/www/html/storage/app
+
+  #MySQL Service
+  db:
+    image: mysql:latest
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci', '--default-authentication-plugin=mysql_native_password']
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+      - /tmp:/sql
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+
+  redis:
+    image: redis:latest
+    restart: always
+
+  scheduler:
+    image: guoxiangke/ly-open
+    restart: always
+    depends_on:
+      - app
+    links:
+      - db:mysql
+      - redis
+    volumes:
+      - .env.docker:/var/www/html/.env
+      - ./app:/var/www/html/app
+      - ./config:/var/www/html/config
+      - ./resources:/var/www/html/resources
+      - ./routes:/var/www/html/routes
+      - ./storage/app:/var/www/html/storage/app
+    environment:
+      REDIS_PORT: 6379
+      CONTAINER_ROLE: scheduler
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
+
+  queue:
+    image: guoxiangke/ly-open
+    restart: always
+    depends_on:
+      - app
+    links:
+      - db:mysql
+      - redis
+    volumes:
+      - ./storage/app:/var/www/html/storage/app
+      - .env.docker:/var/www/html/.env
+      - ./app:/var/www/html/app
+      - ./config:/var/www/html/config
+      - ./resources:/var/www/html/resources
+      - ./routes:/var/www/html/routes
+    environment:
+      REDIS_PORT: 6379
+      CONTAINER_ROLE: queue
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
+
+volumes:
+  db_data:
+  public:
