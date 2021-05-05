@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 class Program extends Model
 {
 	protected $guarded = ['id', 'created_at', 'updated_at', 'deleted_at'];
+    protected $dates = ['created_at', 'updated_at', 'deleted_at', 'begin_at', 'end_at'];
 
     use HasFactory;
 	use SoftDeletes;
