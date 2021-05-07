@@ -19,9 +19,9 @@ class ItemResource extends JsonResource
             $path = '/ly/audio/'. $this->play_at->format('Y') .'/' . $this->program->alias . '/' . $this->alias . '.mp3';
             $playAt = $this->play_at->format('ymd');
         }else{
-            //TODO /ly/audio/mavbm/mavbm002.mp3
-            $path = '/ly/audio/matodo/' . $this->alias . '.mp3';
-            $playAt = $this->alias;
+            preg_match('/(\D+)(\d+)/', $this->alias, $matchs); //mavbm
+            $path = '/ly/audio/'. $matchs[1] .'/' . $this->alias . '.mp3';
+            $playAt = $matchs[2];
         }
         return [
             'id' => $this->id,
