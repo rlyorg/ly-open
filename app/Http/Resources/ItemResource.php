@@ -17,9 +17,11 @@ class ItemResource extends JsonResource
     {
         if($this->play_at){
             $path = '/ly/audio/'. $this->play_at->format('Y') .'/' . $this->program->alias . '/' . $this->alias . '.mp3';
+            $playAt = $this->play_at->format('ymd');
         }else{
             //TODO /ly/audio/mavbm/mavbm002.mp3
             $path = '/ly/audio/matodo/' . $this->alias . '.mp3';
+            $playAt = $this->alias;
         }
         return [
             'id' => $this->id,
@@ -27,7 +29,7 @@ class ItemResource extends JsonResource
             'alias' => $this->alias,
             // 'category' => $this->program->category->name,
             // 'program' => new ProgramResource($this->program),
-            // 'play_at' => $this->play_at->format('ymd'),
+            'play_at' => $playAt,
             'description' => $this->description,
             'path' => $path,
         ];
