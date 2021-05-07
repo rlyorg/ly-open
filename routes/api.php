@@ -26,9 +26,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-// Route::get('/programs', function (Request $request) {
-//     return ProgramResource::collection(Program::active()->get()); //with(['category','announcers'])->
-// });
+Route::get('/programs', function (Request $request) {
+    return ProgramResource::collection(Program::active()->get()); //with(['category','announcers'])->
+});
 
 Route::get('/programs/{program}', function (Request $request, Program $program) {
     return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());

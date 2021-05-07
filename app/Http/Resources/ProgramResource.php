@@ -18,6 +18,7 @@ class ProgramResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'category' => $this->category->name,
             'alias' => $this->alias,
             'announcers' => $this->announcers->pluck('name','id'),
             'begin_at' => $this->begin_at,

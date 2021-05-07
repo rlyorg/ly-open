@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ProgramResource;
 
 class ItemResource extends JsonResource
 {
@@ -23,9 +24,10 @@ class ItemResource extends JsonResource
         return [
             'id' => $this->id,
             'description' => $this->description,
-            // 'alias' => $this->alias,
-            // 'category' => $this->program->name,
-            // 'play_at' => $this->play_at,
+            'alias' => $this->alias,
+            // 'category' => $this->program->category->name,
+            // 'program' => new ProgramResource($this->program),
+            // 'play_at' => $this->play_at->format('ymd'),
             'description' => $this->description,
             'path' => $path,
         ];
