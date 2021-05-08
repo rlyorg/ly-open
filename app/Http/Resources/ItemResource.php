@@ -27,6 +27,7 @@ class ItemResource extends JsonResource
             'id' => $this->id,
             'description' => $this->description,
             'alias' => $this->alias,
+            'program_id' => $this->program->id,
             // 'category' => $this->program->category->name,
             // 'program' => new ProgramResource($this->program),
             'play_at' => $playAt,
