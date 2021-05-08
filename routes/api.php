@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/programs', function (Request $request) {
-    return ProgramResource::collection(Program::active()->get()); //with(['category','announcers'])->
+    return ProgramResource::collection(Program::active()->get());
 });
 
 Route::get('/programs/{program}', function (Request $request, Program $program) {
@@ -35,5 +35,5 @@ Route::get('/programs/{program}', function (Request $request, Program $program) 
 });
 
 Route::get('/categories', function (Request $request) {
-    return CategoryResource::collection(Category::with('programs')->get());//->pluck('name','id');
+    return CategoryResource::collection(Category::with('programs')->get());
 });
