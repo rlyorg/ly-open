@@ -31,7 +31,7 @@ Route::get('/programs', function (Request $request) {
 });
 
 Route::get('/today', function (Request $request) {
-    return ItemResource::collection(Item::where('play_at', now()->subDays(7)->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
+    return ItemResource::collection(Item::where('play_at', now()->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
 });
 
 Route::get('/programs/{program}', function (Request $request, Program $program) {
