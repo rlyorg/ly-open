@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/I1q6rsnogK.txt', function () {
+    return 'a6e840c8853a3ff9b5b58fe816dbaac0';
+});
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
