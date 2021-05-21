@@ -38,9 +38,7 @@ FROM drupal:8.9-apache
 RUN set -ex; \
   apt-get update; \
   apt-get install -y --no-install-recommends \
-    vim \
     libonig-dev\
-    ffmpeg \
   ; \
   docker-php-ext-install -j "$(nproc)" \
     mbstring \
