@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\Announcer;
 use App\Models\Program;
 use App\Models\Category;
+use Illuminate\Support\Facades\Log;
 use voku\helper\HtmlDomParser;
 
 // run once, only on init.
@@ -106,8 +107,10 @@ class InitMeta extends Command
     private function save($program, $programAuthor, $categoryModel)
     {
         
-        $programModel = Program::updateOrCreate($program);
-
+        $programModel = Program::withoutGlobalScopes()->firstOrCreate(['alias'=>$program['alias']], $program);
+        if($programModel->wasRecentlyCreated){
+            Log::info(__METHOD__, ["wasRecentlyCreated", $program]);
+        }
         $programAuthors = explode('、', $programAuthor);
 
         $announcerModelIds = [];

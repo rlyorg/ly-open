@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('home');
+});
+
+
+Route::get('/home', function () {
     return view('welcome');
 });
 
@@ -26,3 +31,62 @@ Route::get('/I1q6rsnogK.txt', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+use App\Http\Livewire\Users;
+use App\Http\Livewire\UsersByRoles;
+use App\Http\Livewire\Roles;
+use App\Http\Livewire\Permissions;
+
+
+use App\Http\Livewire\Programs;
+use App\Models\Program;
+use App\Http\Livewire\Items;
+use App\Jobs\GampQueue;
+
+//后台配置 'namespace'=>'App\Http\Controllers', 
+Route::group(['prefix'=>'admin', 'as'=>'admin.','middleware' =>['auth:sanctum', 'verified']], function () {
+    Route::get('/users', Users::class);
+    // list users by role
+    Route::get('/users/{role}', UsersByRoles::class);
+    Route::get('/roles', Roles::class);
+    Route::get('/permissions', Permissions::class);
+    Route::get('/programs', Programs::class);
+    Route::get('/items', Items::class);
+
+});
+	
+
+Route::get('search', function() {
+    $query = '旷野'; // <-- Change the query for testing.
+
+    $articles = App\Models\Item::search($query)->get();
+
+    return $articles;
+});
+
+Route::get('/play', function () {
+    return view('play');
+});
+
+Route::get('/programs/{program}', function (Program $program) {
+    return view('program', ['program'=>$program]);
+});
+
+Route::get('/today', function () {
+    return view('today');
+});
+
+
+Route::get('/ly/audio/{year}/{code}/{day}.mp3', function ($year,$code,$day) {
+    $request = request();
+    // $clientId, $category, $action, $label
+    // dispatchAfterResponse dispatchSync
+    GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
+
+    return redirect()->away(
+        "https://lywx2018.yongbuzhixi.com/ly/audio/${year}/${code}/${day}.mp3",
+        302,
+        ['Origin'=>'https://r.729ly.net/']
+    );
+});

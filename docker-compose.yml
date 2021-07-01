@@ -9,7 +9,7 @@ services:
       - redis
     build:
       context: .
-      dockerfile: "Dockerfile${DOCKER_ENV}"
+      dockerfile: "Dockerfile"
     restart: unless-stopped
     ports:
       - "8008:80"
@@ -31,6 +31,12 @@ services:
       - ./routes:/var/www/html/routes
       - ./storage/app:/var/www/html/storage/app
 
+  meilisearch:
+      image: 'getmeili/meilisearch:latest'
+      # ports:
+      #     - '${FORWARD_MEILISEARCH_PORT:-7700}:7700'
+      volumes:
+          - 'sailmeilisearch:/data.ms'
   #MySQL Service
   db:
     image: mysql:latest
@@ -96,3 +102,4 @@ services:
 volumes:
   db_data:
   public:
+  sailmeilisearch:

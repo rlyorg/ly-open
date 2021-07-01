@@ -25,19 +25,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::group(['middleware' => ['track.api']], function () {
+    Route::get('/programs', function (Request $request) {
+        return ProgramResource::collection(Program::active()->get());
+    });
 
-Route::get('/programs', function (Request $request) {
-    return ProgramResource::collection(Program::active()->get());
-});
+    Route::get('/today', function (Request $request) {
+        return ItemResource::collection(Item::where('play_at', now()->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
+    });
 
-Route::get('/today', function (Request $request) {
-    return ItemResource::collection(Item::where('play_at', now()->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
-});
+    Route::get('/programs/{program}', function (Request $request, Program $program) {
+        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
+    });
 
-Route::get('/programs/{program}', function (Request $request, Program $program) {
-    return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
-});
+    Route::get('/categories', function (Request $request) {
+        return CategoryResource::collection(Category::with('programs')->get());
+    });
 
-Route::get('/categories', function (Request $request) {
-    return CategoryResource::collection(Category::with('programs')->get());
 });

@@ -38,7 +38,7 @@ class Program extends Model
     protected static function booted()
     {
         static::addGlobalScope('online', function (Builder $builder) {
-            $builder->whereNotIn('alias', ['bsm','kbk','ugn','lisu','mgg']);
+            $builder->whereNotIn('alias', ['bsm', 'kbk', 'ugn', 'lisu', 'mgg']);
         });
     }
 
@@ -59,5 +59,9 @@ class Program extends Model
     public function getCoverAttribute(){
         //  https://cdn.ly.yongbuzhixi.com
     	return "/images/program_banners/bc_prog_banner.png";
-    }      
+    }     
+    
+    public function getActiveAttribute() { return  $this->end_at?'InActive':'Active'; }
+
+    public function getCreatedDateForHumansAttribute() { return $this->begin_at->format('Ymd');}
 }
