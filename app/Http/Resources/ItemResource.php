@@ -35,6 +35,8 @@ class ItemResource extends JsonResource
             'play_at' => $playAt,
             'description' => $this->description,
             'path' => $path,
+            //TODO remove path later
+            'link' => config('app.url'). $path,
         ];
     }
 }

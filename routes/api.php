@@ -38,6 +38,11 @@ Route::group(['middleware' => ['track.api']], function () {
         return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
     });
 
+    Route::get('/program/{code}', function (Request $request, $code) {
+        $program = Program::whereAlias($code)->firstOrFail();
+        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
+    });
+
     Route::get('/categories', function (Request $request) {
         return CategoryResource::collection(Category::with('programs')->get());
     });
