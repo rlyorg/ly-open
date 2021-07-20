@@ -90,3 +90,16 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function ($year,$code,$day) {
         ['Origin'=>'https://r.729ly.net/']
     );
 });
+// LTS audio
+Route::get('/ly/audio/{code}/{day}.mp3', function ($code,$day) {
+    $request = request();
+    // $clientId, $category, $action, $label
+    // dispatchAfterResponse dispatchSync
+    GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
+
+    return redirect()->away(
+        "https://729lyprog.net/ly/audio/${code}/${day}.mp3",
+        302,
+        ['Origin'=>'https://r.729ly.net/']
+    );
+});
