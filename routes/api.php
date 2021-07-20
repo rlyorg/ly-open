@@ -40,7 +40,12 @@ Route::group(['middleware' => ['track.api']], function () {
 
     Route::get('/program/{code}', function (Request $request, $code) {
         $program = Program::whereAlias($code)->firstOrFail();
-        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
+        if(in_array($code, ['ltsnp','ltsdp1','ltsdp2','ltshdp1','ltshdp2'])){
+            return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('updated_at','desc')->simplePaginate(31));
+        }else{
+            return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
+        }
+
     });
 
     Route::get('/categories', function (Request $request) {
