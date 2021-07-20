@@ -85,7 +85,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function ($year,$code,$day) {
     GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
 
     return redirect()->away(
-        "https://lywx2018.yongbuzhixi.com/ly/audio/${year}/${code}/${day}.mp3",
+        "https://729lyprog.net/ly/audio/${year}/${code}/${day}.mp3",
         302,
         ['Origin'=>'https://r.729ly.net/']
     );
