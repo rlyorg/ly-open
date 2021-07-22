@@ -34,16 +34,12 @@ Route::group(['middleware' => ['track.api']], function () {
         return ItemResource::collection(Item::where('play_at', now()->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
     });
 
-    Route::get('/programs/{program}', function (Request $request, Program $program) {
-        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
-    });
-
     Route::get('/program/{code}', function (Request $request, $code) {
         $program = Program::whereAlias($code)->firstOrFail();
         if(in_array($code, ['ltsnp','ltsdp1','ltsdp2','ltshdp1','ltshdp2'])){
             return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('updated_at','desc')->simplePaginate(31));
         }else{
-            return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate());
+            return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate(31));
         }
 
     });
