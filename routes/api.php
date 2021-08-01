@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Http\Resources\ItemResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+// 手动调用，更新节目
+// TODO（如果0点自动获取节目出现问题，每天5点检查一遍）
+// TODO 使用vdata API
+Route::get('/update', function () {
+    return Artisan::call('ly:update');
+});
+
 Route::group(['middleware' => ['track.api']], function () {
     Route::get('/programs', function (Request $request) {
         return ProgramResource::collection(Program::active()->get());
@@ -37,11 +45,11 @@ Route::group(['middleware' => ['track.api']], function () {
     Route::get('/program/{code}', function (Request $request, $code) {
         $program = Program::whereAlias($code)->firstOrFail();
         if(in_array($code, ['ltsnp','ltsdp1','ltsdp2','ltshdp1','ltshdp2'])){
-            return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('updated_at','desc')->simplePaginate(31));
+            $orderField = 'updated_at';
         }else{
-            return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate(31));
+            $orderField = 'play_at';
         }
-
+        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy($orderField,'desc')->simplePaginate(31));
     });
 
     Route::get('/categories', function (Request $request) {
