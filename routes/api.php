@@ -42,7 +42,7 @@ Route::group(['middleware' => ['track.api']], function () {
         return ItemResource::collection(Item::where('play_at', now()->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
     });
 
-    Route::get('/programs/{code}', function (Request $request, $code) {
+    Route::get('/program/{code}', function (Request $request, $code) {
         $program = Program::whereAlias($code)->firstOrFail();
         if(in_array($code, ['ltsnp','ltsdp1','ltsdp2','ltshdp1','ltshdp2'])){
             $orderField = 'updated_at';
