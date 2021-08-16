@@ -84,11 +84,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function ($year,$code,$day) {
     // dispatchAfterResponse dispatchSync
     GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
 
-    return redirect()->away(
-        "https://729lyprog.net/ly/audio/${year}/${code}/${day}.mp3",
-        302,
-        ['Origin'=>'https://r.729ly.net/']
-    );
+    return redirect()->away("https://lystore.yongbuzhixi.com/ly/audio/${year}/${code}/${day}.mp3");
 });
 // LTS audio
 Route::get('/ly/audio/{code}/{day}.mp3', function ($code,$day) {
@@ -97,9 +93,5 @@ Route::get('/ly/audio/{code}/{day}.mp3', function ($code,$day) {
     // dispatchAfterResponse dispatchSync
     GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
 
-    return redirect()->away(
-        "https://729lyprog.net/ly/audio/${code}/${day}.mp3",
-        302,
-        ['Origin'=>'https://r.729ly.net/']
-    );
+    return redirect()->away("https://lystore.yongbuzhixi.com/ly/audio/${code}/${day}.mp3");
 });

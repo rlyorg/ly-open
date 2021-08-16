@@ -52,6 +52,11 @@ Route::group(['middleware' => ['track.api']], function () {
         return ItemResource::collection(Item::where('program_id', $program->id)->orderBy($orderField,'desc')->simplePaginate(31));
     });
 
+    Route::get('/program/{code}/{date}', function (Request $request, $code, $date) {
+        $program = Program::whereAlias($code)->firstOrFail();
+        return ItemResource::collection(Item::where('program_id', $program->id)->where('play_at', $date)->get());
+    });
+
     Route::get('/categories', function (Request $request) {
         return CategoryResource::collection(Category::with('programs')->get());
     });
