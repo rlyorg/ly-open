@@ -63,5 +63,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'track.api' => \App\Http\Middleware\TrackAPI::class,
+        //@see https://spatie.be/docs/laravel-permission/v5/basic-usage/middleware
+        'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
     ];
 }

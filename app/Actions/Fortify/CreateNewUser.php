@@ -27,6 +27,10 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
+            //@see https://github.com/Propaganistas/Laravel-Phone
+            // 'telephone'     => ['required', 'numeric', 'size:11'],
+            'telephone'     => ['required', 'phone:US,CN'],
+            
         ])->validate();
 
         return DB::transaction(function () use ($input) {
@@ -34,8 +38,9 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
-            ]), function (User $user) {
+            ]), function (User $user) use ($input) {
                 $this->createTeam($user);
+                $this->saveTelephone($user, $input['telephone']);
             });
         });
     }
@@ -53,5 +58,17 @@ class CreateNewUser implements CreatesNewUsers
             'name' => explode(' ', $user->name, 2)[0]."'s Team",
             'personal_team' => true,
         ]));
+    }
+
+
+    /**
+     * Save a personal telephone for the user.
+     *
+     * @param  \App\Models\User  $user
+     * @return void
+     */
+    protected function saveTelephone(User $user, $telephone)
+    {
+        $user->setMeta('telephone', $telephone);
     }
 }

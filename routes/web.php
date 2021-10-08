@@ -44,8 +44,8 @@ use App\Models\Program;
 use App\Http\Livewire\Items;
 use App\Jobs\GampQueue;
 
-//后台配置 'namespace'=>'App\Http\Controllers', 
-Route::group(['prefix'=>'admin', 'as'=>'admin.','middleware' =>['auth:sanctum', 'verified']], function () {
+// 后台配置 'namespace'=>'App\Http\Controllers',  'middleware' =>['auth:sanctum', 'verified', 
+Route::group(['prefix'=>'admin', 'as'=>'admin.','middleware' =>['role:super-admin']], function () {
     Route::get('/users', Users::class);
     // list users by role
     Route::get('/users/{role}', UsersByRoles::class);

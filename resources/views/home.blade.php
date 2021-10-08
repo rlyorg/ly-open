@@ -10,9 +10,11 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" /> -->
     <!--Replace with your tailwind.css once created-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" /> -->
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
     <style>
       .gradient {
@@ -20,7 +22,7 @@
       }
     </style>
     <!-- Scripts -->
-    <script src="/js/app.js" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
@@ -790,61 +792,6 @@
         return false;
       }
     </script>
-    
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
-    <script>
-
-        window.onload = function () {
-            function aplayer () {
-              const body = document.getElementsByTagName('body')[0];
-              var divtest = document.createElement("div");
-              divtest.innerHTML = '<div id="aplayer"></div>';
-              body.appendChild(divtest);
-
-              window.ap = new APlayer({
-                  container: document.getElementById('aplayer'),
-                  fixed: true,
-                  audio: []
-              });
-            }
-
-            
-            axios({
-                method: 'get',
-                url: '/api/today'
-            })
-            .then(function (response) {
-                // let domain = 'https://729lyprog.net';
-                let domain = 'http://lywx2018.yongbuzhixi.com';
-                // var objTo = document.getElementById('list');
-                response.data.data.forEach(item => {
-                    console.log(item)
-                    // var divtest = document.createElement("div");
-                    // divtest.innerHTML = item.description;
-                    // objTo.appendChild(divtest);
-
-                    const audio = {
-                        name: '【' + item.program_name +'】' + item.description,
-                        artist: item.play_at,
-                        url: domain + item.path,
-                        cover: 'https://cdn.ly.yongbuzhixi.com/images/programs/'+item.code+'_prog_banner_sq.jpg',
-                    }
-                    ap2.list.add(audio)
-                })
-                // document.getElementById('list').
-            });
-
-        }
-
-    </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-    <style>
-        .prose ol > li::before {
-            content: '';
-        }
-    </style>
 
   </body>
 </html>

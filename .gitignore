@@ -13,7 +13,7 @@ npm-debug.log
 yarn-error.log
 .DS_Store
 .idea/
-public/css/app.css
-public/js/app.js
+public/css/
+public/js/
 /docs/
 storage/debugbar/

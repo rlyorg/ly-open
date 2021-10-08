@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Team;
 use App\Policies\TeamPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Defining a Super-Admin
+        // @see https://spatie.be/docs/laravel-permission/v5/basic-usage/super-admin
+        Gate::before(function ($user, $ability) {
+            return ($user->id == 1 || $user->hasRole('Super Admin')) ? true : null;
+        });
     }
 }

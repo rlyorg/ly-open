@@ -21,6 +21,7 @@
         "meilisearch/meilisearch-php": "^0.18.0",
         "plank/laravel-metable": "^5.0",
         "predis/predis": "^1.1",
+        "propaganistas/laravel-phone": "^4.3",
         "spatie/laravel-activitylog": "^3.17",
         "spatie/laravel-permission": "^4.0",
         "voku/simple_html_dom": "^4.7"
