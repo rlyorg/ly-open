@@ -18,30 +18,30 @@
                         <span class="flex font-medium text-sm text-gray-400 px-4 my-4 uppercase">Projects</span>
                     </li>
                     <li class="my-px">
-                        <a href="#"
+                        <a href="{{ route('admin.users') }}"
                            class="flex flex-row items-center h-12 px-4 rounded-lg text-gray-500 hover:bg-gray-700 hover:text-white">
                             <span class="flex items-center justify-center text-lg text-gray-500">
                                 <i class="fas fas-home w-4 h-4"></i>
                             </span>
-                            <span class="ml-3">Users</span>
+                            <span class="ml-3">Developers</span>
                         </a>
                     </li>
                     <li class="my-px">
-                        <a href="#"
-                           class="flex flex-row items-center h-12 px-4 rounded-lg text-gray-500 hover:bg-gray-700">
+                        <a href="{{ route('admin.programs') }}"
+                           class="flex flex-row items-center h-12 px-4 rounded-lg text-gray-500 hover:bg-gray-700 hover:text-white">
                             <span class="flex items-center justify-center text-lg text-gray-500">
                                 <i class="fas fas-home w-4 h-4"></i>
                             </span>
-                            <span class="ml-3">Roles</span>
+                            <span class="ml-3">Programs</span>
                         </a>
                     </li>
                     <li class="my-px">
-                        <a href="#"
-                           class="flex flex-row items-center h-12 px-4 rounded-lg text-gray-500 hover:bg-gray-700">
+                        <a href="{{ route('admin.items') }}"
+                           class="flex flex-row items-center h-12 px-4 rounded-lg text-gray-500 hover:bg-gray-700 hover:text-white">
                             <span class="flex items-center justify-center text-lg text-gray-500">
                                 <i class="fas fas-home w-4 h-4"></i>
                             </span>
-                            <span class="ml-3">Permissons</span>
+                            <span class="ml-3">Items</span>
                         </a>
                     </li>
                     <li class="my-px">

@@ -46,13 +46,13 @@ use App\Jobs\GampQueue;
 
 // 后台配置 'namespace'=>'App\Http\Controllers',  'middleware' =>['auth:sanctum', 'verified', 
 Route::group(['prefix'=>'admin', 'as'=>'admin.','middleware' =>['role:super-admin']], function () {
-    Route::get('/users', Users::class);
+    Route::get('/users', Users::class)->name('users');
     // list users by role
-    Route::get('/users/{role}', UsersByRoles::class);
-    Route::get('/roles', Roles::class);
-    Route::get('/permissions', Permissions::class);
-    Route::get('/programs', Programs::class);
-    Route::get('/items', Items::class);
+    // Route::get('/users/{role}', UsersByRoles::class);
+    Route::get('/roles', Roles::class)->name('roles');
+    Route::get('/permissions', Permissions::class)->name('permissions');
+    Route::get('/programs', Programs::class)->name('programs');
+    Route::get('/items', Items::class)->name('items');
 
 });
 	

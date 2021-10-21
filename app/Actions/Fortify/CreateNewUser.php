@@ -2,9 +2,7 @@
 
 namespace App\Actions\Fortify;
 
-use App\Models\Team;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -15,7 +13,7 @@ class CreateNewUser implements CreatesNewUsers
     use PasswordValidationRules;
 
     /**
-     * Create a newly registered user.
+     * Validate and create a newly registered user.
      *
      * @param  array  $input
      * @return \App\Models\User
@@ -30,45 +28,18 @@ class CreateNewUser implements CreatesNewUsers
             //@see https://github.com/Propaganistas/Laravel-Phone
             // 'telephone'     => ['required', 'numeric', 'size:11'],
             'telephone'     => ['required', 'phone:US,CN'],
-            
+            'individual' => ['required', 'boolean'],//0/1
         ])->validate();
 
-        return DB::transaction(function () use ($input) {
-            return tap(User::create([
-                'name' => $input['name'],
-                'email' => $input['email'],
-                'password' => Hash::make($input['password']),
-            ]), function (User $user) use ($input) {
-                $this->createTeam($user);
-                $this->saveTelephone($user, $input['telephone']);
-            });
-        });
-    }
+        $user = User::create([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'password' => Hash::make($input['password']),
+        ]);
 
-    /**
-     * Create a personal team for the user.
-     *
-     * @param  \App\Models\User  $user
-     * @return void
-     */
-    protected function createTeam(User $user)
-    {
-        $user->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $user->id,
-            'name' => explode(' ', $user->name, 2)[0]."'s Team",
-            'personal_team' => true,
-        ]));
-    }
-
-
-    /**
-     * Save a personal telephone for the user.
-     *
-     * @param  \App\Models\User  $user
-     * @return void
-     */
-    protected function saveTelephone(User $user, $telephone)
-    {
-        $user->setMeta('telephone', $telephone);
+        $user->setMeta('isIndividual', $input['individual']);
+        $user->setMeta('about', $input['about'] ?? null);
+        $user->setMeta('telephone', $input['telephone']);
+        return $user;
     }
 }

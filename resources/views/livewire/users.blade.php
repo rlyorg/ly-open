@@ -18,9 +18,6 @@
             </x-input.group>
 
             <x-dropdown label="Bulk Actions">
-                <x-dropdown.item type="button" wire:click="exportSelected" class="flex items-center space-x-2">
-                    <x-icon.download class="text-cool-gray-400"/> <span>Export</span>
-                </x-dropdown.item>
                 
                 <x-dropdown.item type="button" wire:click="$toggle('showDeleteModal')"
                     class="flex items-center space-x-2">
@@ -28,7 +25,6 @@
                 </x-dropdown.item>
             </x-dropdown>
             
-            <livewire:import-transactions />
 
             <x-button.primary wire:click="create"><x-icon.plus /> New </x-button.primary>
         </div>
@@ -45,7 +41,10 @@
             <x-table.heading sortable multi-column wire:click="sortBy('email')" :direction="$sorts['email'] ?? null">
                 Email</x-table.heading>
             <x-table.heading sortable multi-column wire:click="sortBy('status')" :direction="$sorts['status'] ?? null">
-                Status</x-table.heading>
+                Telephone</x-table.heading>
+
+            <x-table.heading sortable multi-column wire:click="sortBy('status')" :direction="$sorts['status'] ?? null">
+                Type</x-table.heading>
             <x-table.heading sortable multi-column wire:click="sortBy('date')" :direction="$sorts['date'] ?? null">
                 Created_at</x-table.heading>
             <x-table.heading />
@@ -90,21 +89,15 @@
                         </x-table.cell>
 
                         <x-table.cell>
-                            <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-{{ $user->status_color }}-100 text-{{ $user->status_color }}-800 capitalize">
-                                {{ $user->active }}
-                            </span>
+                            {{ $user->getMeta('telephone') }}
                         </x-table.cell>
 
                         <x-table.cell>
-                            <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-{{ $user->status_color }}-100 text-{{ $user->status_color }}-800 capitalize">
-                                {{ $user->active }}
-                            </span>
+                        {{ $user->getMeta('isIndividual')?'个人':'团体' }}
                         </x-table.cell>
 
                         <x-table.cell>
-                            {{ $user->created_date_for_humans }}
+                            {{ $user->created_at }}
                         </x-table.cell>
 
                         <x-table.cell>

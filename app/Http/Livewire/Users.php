@@ -101,7 +101,7 @@ class Users extends Component
 
     public function getRowsQueryProperty()
     {
-        $query = User::query()
+        $query = User::query()->with('meta')
             ->when($this->filters['search'], fn($query, $search) => $query->where('name', 'like', '%' . $search . '%')->orWhere('email', 'like', '%' . $search . '%'));
 
         return $this->applySorting($query);
