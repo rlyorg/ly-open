@@ -148,8 +148,7 @@
          font-weight: normal;
          font-display: swap;
          src: local('Atkinson Hyperlegible Regular'), local('AtkinsonHyperlegible-Regular'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-Regular-102.woff2?v=bf041f893a") format('woff2'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-Regular-102.woff?v=bf041f893a") format('woff');
+         url("/fonts/Atkinson-Hyperlegible-Regular-102.woff") format('woff');
          }
          /* Atkinson Hyperlegible Italic */
          @font-face {
@@ -158,8 +157,7 @@
          font-weight: normal;
          font-display: swap;
          src: local('Atkinson Hyperlegible Italic'), local('AtkinsonHyperlegible-Italic'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-Italic-102.woff2?v=bf041f893a") format('woff2'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-Italic-102.woff?v=bf041f893a") format('woff');
+         url("/fonts/Atkinson-Hyperlegible-Italic-102.woff") format('woff');
          }
          /* Atkinson Hyperlegible Bold */
          @font-face {
@@ -168,8 +166,7 @@
          font-weight: bold;
          font-display: swap;
          src: local('Atkinson Hyperlegible Bold'), local('AtkinsonHyperlegible-Bold'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-Bold-102.woff2?v=bf041f893a") format('woff2'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-Bold-102.woff?v=bf041f893a") format('woff');
+         url("/fonts/Atkinson-Hyperlegible-Bold-102.woff") format('woff');
          }
          /* Atkinson Hyperlegible Bold Italic */
          @font-face {
@@ -178,8 +175,7 @@
          font-weight: bold;
          font-display: swap;
          src: local('Atkinson Hyperlegible Bold Italic'), local('AtkinsonHyperlegible-BoldItalic'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-BoldItalic-102.woff2?v=bf041f893a") format('woff2'),
-         url("https://galerie.eduardogomez.io/assets/fonts/atkinson/Atkinson-Hyperlegible-BoldItalic-102.woff?v=bf041f893a") format('woff');
+         url("/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff") format('woff');
          }
          /* Galerie Iconfont */
          @font-face {
@@ -187,12 +183,12 @@
          font-weight: normal;
          font-style: normal;
          font-display: swap;
-         src: url("https://galerie.eduardogomez.io/assets/fonts/galerie/Galerie.eot?v=bf041f893a");
-         src: url("https://galerie.eduardogomez.io/assets/fonts/galerie/Galerie.eot?v=bf041f893a") format('embedded-opentype'),
-         url("https://galerie.eduardogomez.io/assets/fonts/galerie/Galerie.woff2?v=bf041f893a") format('woff2'),
-         url("https://galerie.eduardogomez.io/assets/fonts/galerie/Galerie.woff?v=bf041f893a") format('woff'),
-         url("https://galerie.eduardogomez.io/assets/fonts/galerie/Galerie.ttf?v=bf041f893a") format('truetype'),
-         url("https://galerie.eduardogomez.io/assets/fonts/galerie/Galerie.svg?v=bf041f893a") format('svg');
+         src: url("/fonts/Galerie.eot");
+         src: url("/fonts/Galerie.eot") format('embedded-opentype'),
+         url("/fonts/Galerie.woff2") format('woff2'),
+         url("/fonts/Galerie.woff") format('woff'),
+         url("/fonts/Galerie.ttf") format('truetype'),
+         url("/fonts/Galerie.svg") format('svg');
          }
       </style>
       <script>

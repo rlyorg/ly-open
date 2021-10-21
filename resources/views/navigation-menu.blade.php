@@ -16,6 +16,23 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                @role('super-admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.programs') }}" :active="request()->routeIs('admin.programs')">
+                        {{ __('Programs') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.items') }}" :active="request()->routeIs('admin.items')">
+                        {{ __('Items') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.users') }}" :active="request()->routeIs('admin.users')">
+                        {{ __('Developers') }}
+                    </x-jet-nav-link>
+                </div>
+                @endrole
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
