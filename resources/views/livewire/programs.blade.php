@@ -37,9 +37,9 @@
             >Category</x-table.heading>
             <x-table.heading  multi-column class="w-full">Brief</x-table.heading>
             <x-table.heading sortable multi-column wire:click="sortBy('begin_at')" :direction="$sorts['begin_at'] ?? null">
-                Begin_at</x-table.heading>
+                BeginAt</x-table.heading>
             <x-table.heading sortable multi-column wire:click="sortBy('status')" :direction="$sorts['status'] ?? null">
-                    Status</x-table.heading>
+                    EndAt</x-table.heading>
             <x-table.heading />
         </x-slot>
 
@@ -93,13 +93,11 @@
 
 
                         <x-table.cell>
-                            {{ $model->created_date_for_humans }}
+                            {{ $model->begin_at->format("Y/m/d") }}
                         </x-table.cell>
 
                         <x-table.cell>
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-{{ $model->status_color }}-100 text-{{ $model->status_color }}-800 capitalize">
-                                {{ $model->active }}
-                            </span>
+                            {{ optional($model->end_at)->format("Y/m/d") }}
                         </x-table.cell>
 
                         <x-table.cell>
@@ -131,26 +129,11 @@
 
             <x-slot name="content">
                 <x-input.group for="name" label="Name" :error="$errors->first('editing.name')">
-                    <x-input.text wire:model="editing.name" placeholder="Name" />
+                    <x-input.text wire:model="editing.name" placeholder="Name" disabled />
                 </x-input.group>
 
-                <x-input.group for="alias" label="Alias" :error="$errors->first('editing.alias')">
-                    <x-input.text wire:model="editing.alias" placeholder="Alias" />
-                </x-input.group>
-
-                <x-input.group for="category_id" label="Category" :error="$errors->first('editing.category_id')">
-
-                    <x-input.select id="category_id" wire:model.defer="editing.category_id" class="mt-1 block w-full font-medium  text-gray-700" autocomplete="category_id" >
-                     
-                        @foreach ($categories as $id => $name)
-                        <option value="{{$id}}">{{$name}}</option>
-                        @endforeach
-                    </x-input.select>
-
-                </x-input.group>
-
-                <x-input.group for="brief" label="Brief" :error="$errors->first('editing.brief')">
-                    <x-input.text wire:model="editing.brief" placeholder="brief" />
+                <x-input.group for="end_at" label="停播时间" :error="$errors->first('editing.end_at')">
+                    <x-input.date wire:model="editing.end_at" />
                 </x-input.group>
  
             </x-slot>

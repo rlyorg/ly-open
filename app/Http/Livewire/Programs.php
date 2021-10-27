@@ -53,6 +53,8 @@ class Programs extends Component
             'editing.name' => 'required|min:2',
             'editing.category_id' => 'required|integer', //default value.
             'editing.brief' => 'required|min:2',
+            'editing.begin_at' => 'nullable|date',
+            'editing.end_at' => 'nullable|date',
             // $table->timestamp('begin_at')->default('2021-01-01 00:00:00');
             // $table->timestamp('end_at')->nullable();
         ];

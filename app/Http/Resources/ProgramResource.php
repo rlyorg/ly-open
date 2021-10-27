@@ -20,7 +20,7 @@ class ProgramResource extends JsonResource
             'name' => $this->name,
             'category' => $this->category->name,
             'alias' => $this->alias,
-            'link' => config('app.url') .'/program/'. $this->alias,
+            'link' => config('app.url') .'/api/program/'. $this->alias,
             'announcers' => $this->announcers->pluck('name','id'),
             'begin_at' => $this->begin_at,
             'end_at' => $this->end_at,
