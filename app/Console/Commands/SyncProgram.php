@@ -51,12 +51,13 @@ class SyncProgram extends Command
                 $data = $response->json();
                 foreach ($data as $item) {
                     $program = Program::where('alias', $item['alias'])->first();
+                    $description = str_replace('\r\n&gt;&gt;&gt; 节目资源', '', strip_tags($item['series_description']));
                     if(!$program){
                         Program::create([
                             'name' =>  $item['title'],
                             'alias' =>  $item['alias'],
                             'brief' =>  $item['series_brief'],
-                            'description' =>  strip_tags($item['series_description']),
+                            'description' => $description,
                             'email' =>  $item['emailto'],
                             'sms_keyword' =>  $item['smsto'],
                             'phone_open' =>  $item['phoneto'],
@@ -67,7 +68,7 @@ class SyncProgram extends Command
                         $program->update([
                             'name' =>  $item['title'],
                             'brief' =>  $item['series_brief'],
-                            'description' =>  strip_tags($item['series_description']),
+                            'description' => $description,
                             'email' =>  $item['emailto'],
                             'sms_keyword' =>  $item['smsto'],
                             'phone_open' =>  $item['phoneto'],

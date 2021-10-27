@@ -1,1654 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <title>良友开放平台</title>
-      <meta name="HandheldFriendly" content="True" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="preload" href="https://galerie.eduardogomez.io/assets/css/app.css?v=bf041f893a" as="style" />
-      <link rel="preload" href="https://galerie.eduardogomez.io/assets/js/manifest.js?v=bf041f893a" as="script" />
-      <link rel="preload" href="https://galerie.eduardogomez.io/assets/js/vendor.js?v=bf041f893a" as="script" />
-      <link rel="preload" href="https://galerie.eduardogomez.io/assets/js/app.js?v=bf041f893a" as="script" />
-      <link rel="preload" href="https://galerie.eduardogomez.io/assets/css/home.css?v=bf041f893a" as="style" />
-      <link
-         rel="stylesheet"
-         type="text/css"
-         href="https://galerie.eduardogomez.io/assets/css/app.css?v=bf041f893a"
-         media="screen"
-         />
-      <link
-         rel="stylesheet"
-         type="text/css"
-         href="https://galerie.eduardogomez.io/assets/css/home.css?v=bf041f893a"
-         media="screen"
-         />
-      <meta name="description" content="Modern and versatile theme that stands out for its sleek design, it&#x27;s incredibly fast, it offers a great user experience and it has many options to customise it." />
-      <link rel="canonical" href="https://galerie.eduardogomez.io/" />
-      <meta name="referrer" content="no-referrer-when-downgrade" />
-      <link rel="next" href="https://galerie.eduardogomez.io/page/2/" />
-      <meta property="og:site_name" content="Galerie Theme" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Galerie Theme" />
-      <meta property="og:description" content="Modern and versatile theme that stands out for its sleek design, it&#x27;s incredibly fast, it offers a great user experience and it has many options to customise it." />
-      <meta property="og:url" content="https://galerie.eduardogomez.io/" />
-      <meta property="og:image" content="https://galerie.eduardogomez.io/content/images/2021/09/cover-1.jpg" />
-      <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Galerie Theme" />
-      <meta name="twitter:description" content="Modern and versatile theme that stands out for its sleek design, it&#x27;s incredibly fast, it offers a great user experience and it has many options to customise it." />
-      <meta name="twitter:url" content="https://galerie.eduardogomez.io/" />
-      <meta name="twitter:image" content="https://galerie.eduardogomez.io/content/images/2021/09/cover-1.jpg" />
-      <meta name="twitter:site" content="@ghost" />
-      <meta property="og:image:width" content="2000" />
-      <meta property="og:image:height" content="1422" />
-      <script type="application/ld+json">
-         {
-             "@context": "https://schema.org",
-             "@type": "WebSite",
-             "publisher": {
-                 "@type": "Organization",
-                 "name": "Galerie Theme",
-                 "url": "https://galerie.eduardogomez.io/",
-                 "logo": {
-                     "@type": "ImageObject",
-                     "url": "https://galerie.eduardogomez.io/content/images/2021/09/ghost-logo-light-1.svg",
-                     "width": 80,
-                     "height": 30
-                 }
-             },
-             "url": "https://galerie.eduardogomez.io/",
-             "image": {
-                 "@type": "ImageObject",
-                 "url": "https://galerie.eduardogomez.io/content/images/2021/09/cover-1.jpg",
-                 "width": 2000,
-                 "height": 1422
-             },
-             "mainEntityOfPage": {
-                 "@type": "WebPage",
-                 "@id": "https://galerie.eduardogomez.io/"
-             },
-             "description": "Modern and versatile theme that stands out for its sleek design, it&#x27;s incredibly fast, it offers a great user experience and it has many options to customise it."
-         }
-             
-      </script>
-      <meta name="generator" content="Ghost 4.15" />
-      <link rel="alternate" type="application/rss+xml" title="Galerie Theme" href="https://galerie.eduardogomez.io/rss/" />
-      <style id="gh-members-styles">.gh-post-upgrade-cta-content,
-         .gh-post-upgrade-cta {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-         text-align: center;
-         width: 100%;
-         color: #ffffff;
-         font-size: 16px;
-         }
-         .gh-post-upgrade-cta-content {
-         border-radius: 8px;
-         padding: 40px 4vw;
-         }
-         .gh-post-upgrade-cta h2 {
-         color: #ffffff;
-         font-size: 28px;
-         letter-spacing: -0.2px;
-         margin: 0;
-         padding: 0;
-         }
-         .gh-post-upgrade-cta p {
-         margin: 20px 0 0;
-         padding: 0;
-         }
-         .gh-post-upgrade-cta small {
-         font-size: 16px;
-         letter-spacing: -0.2px;
-         }
-         .gh-post-upgrade-cta a {
-         color: #ffffff;
-         cursor: pointer;
-         font-weight: 500;
-         box-shadow: none;
-         text-decoration: underline;
-         }
-         .gh-post-upgrade-cta a:hover {
-         color: #ffffff;
-         opacity: 0.8;
-         box-shadow: none;
-         text-decoration: underline;
-         }
-         .gh-post-upgrade-cta a.gh-btn {
-         display: block;
-         background: #ffffff;
-         text-decoration: none;
-         margin: 28px 0 0;
-         padding: 8px 18px;
-         border-radius: 4px;
-         font-size: 16px;
-         font-weight: 600;
-         }
-         .gh-post-upgrade-cta a.gh-btn:hover {
-         opacity: 0.92;
-         }
-      </style>
-      <style>:root {--ghost-accent-color: #7209b7;}</style>
-      <style>
-         :root {
-         --accent-color: var(--ghost-accent-color);
-         }
-      </style>
-      <style>
-         /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
-         /* Atkinson Hyperlegible Regular */
-         @font-face {
-         font-family: 'Atkinson Hyperlegible';
-         font-style: normal;
-         font-weight: normal;
-         font-display: swap;
-         src: local('Atkinson Hyperlegible Regular'), local('AtkinsonHyperlegible-Regular'),
-         url("/fonts/Atkinson-Hyperlegible-Regular-102.woff") format('woff');
-         }
-         /* Atkinson Hyperlegible Italic */
-         @font-face {
-         font-family: 'Atkinson Hyperlegible';
-         font-style: italic;
-         font-weight: normal;
-         font-display: swap;
-         src: local('Atkinson Hyperlegible Italic'), local('AtkinsonHyperlegible-Italic'),
-         url("/fonts/Atkinson-Hyperlegible-Italic-102.woff") format('woff');
-         }
-         /* Atkinson Hyperlegible Bold */
-         @font-face {
-         font-family: 'Atkinson Hyperlegible';
-         font-style: normal;
-         font-weight: bold;
-         font-display: swap;
-         src: local('Atkinson Hyperlegible Bold'), local('AtkinsonHyperlegible-Bold'),
-         url("/fonts/Atkinson-Hyperlegible-Bold-102.woff") format('woff');
-         }
-         /* Atkinson Hyperlegible Bold Italic */
-         @font-face {
-         font-family: 'Atkinson Hyperlegible';
-         font-style: italic;
-         font-weight: bold;
-         font-display: swap;
-         src: local('Atkinson Hyperlegible Bold Italic'), local('AtkinsonHyperlegible-BoldItalic'),
-         url("/fonts/Atkinson-Hyperlegible-BoldItalic-102.woff") format('woff');
-         }
-         /* Galerie Iconfont */
-         @font-face {
-         font-family: 'Galerie';
-         font-weight: normal;
-         font-style: normal;
-         font-display: swap;
-         src: url("/fonts/Galerie.eot");
-         src: url("/fonts/Galerie.eot") format('embedded-opentype'),
-         url("/fonts/Galerie.woff2") format('woff2'),
-         url("/fonts/Galerie.woff") format('woff'),
-         url("/fonts/Galerie.ttf") format('truetype'),
-         url("/fonts/Galerie.svg") format('svg');
-         }
-      </style>
-      <script>
-         const ghostHost = 'https://galerie.eduardogomez.io'
-      </script>
-   </head>
-   <body class="home-template">
-      <header class="g-header js-header" x-data>
-         <button
-            class="g-header-button no-appearance focusable content-centered"
-            aria-label="Open menu"
-            @click="$dispatch('open-menu')"
-            >
-         <span
-            class="g-header-button__icon icon-menu-scale"
-            aria-hidden="true"
-            ></span>
-         <span class="g-header-button__label">菜单</span>
-         </button>
-         <a
-            href="#"
-            class="g-logo in-header"
-            title="Galerie Theme"
-            style="color: white;"
-            >
-            良友开放平台
+<html>
+<title>良友电台开放平台</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+   /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
+audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+a{background-color:transparent}a:active,a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
+button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
+button,input{overflow:visible}button,select{text-transform:none}
+button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}
+button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
+[type=checkbox],[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+.w3-serif{font-family:serif}.w3-sans-serif{font-family:sans-serif}.w3-cursive{font-family:cursive}.w3-monospace{font-family:monospace}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
+hr{border:0;border-top:1px solid #eee;margin:20px 0}
+.w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
+.w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
+.w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}
+.w3-table-all tr:nth-child(odd){background-color:#fff}.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+.w3-hoverable tbody tr:hover,.w3-ul.w3-hoverable li:hover{background-color:#ccc}.w3-centered tr th,.w3-centered tr td{text-align:center}
+.w3-table td,.w3-table th,.w3-table-all td,.w3-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
+.w3-table th:first-child,.w3-table td:first-child,.w3-table-all th:first-child,.w3-table-all td:first-child{padding-left:16px}
+.w3-btn,.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+.w3-btn,.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+.w3-disabled,.w3-btn:disabled,.w3-button:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}
+.w3-btn.w3-disabled:hover,.w3-btn:disabled:hover{box-shadow:none}
+.w3-badge,.w3-tag{background-color:#000;color:#fff;display:inline-block;padding-left:8px;padding-right:8px;text-align:center}.w3-badge{border-radius:50%}
+.w3-ul{list-style-type:none;padding:0;margin:0}.w3-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.w3-ul li:last-child{border-bottom:none}
+.w3-tooltip,.w3-display-container{position:relative}.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{display:inline-block}
+.w3-ripple:active{opacity:0.5}.w3-ripple{transition:opacity 0s}
+.w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+.w3-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
+.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+.w3-dropdown-hover:hover .w3-dropdown-content{display:block}
+.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000}
+.w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
+.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.w3-check,.w3-radio{width:24px;height:24px;position:relative;top:6px}
+.w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
+.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.w3-main,#main{transition:margin-left .4s}
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
+.w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
+.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click{position:static;float:left}
+.w3-bar .w3-button{white-space:normal}
+.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
+.w3-responsive{display:block;overflow-x:auto}
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+.w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}
+.w3-col.s1{width:8.33333%}.w3-col.s2{width:16.66666%}.w3-col.s3{width:24.99999%}.w3-col.s4{width:33.33333%}
+.w3-col.s5{width:41.66666%}.w3-col.s6{width:49.99999%}.w3-col.s7{width:58.33333%}.w3-col.s8{width:66.66666%}
+.w3-col.s9{width:74.99999%}.w3-col.s10{width:83.33333%}.w3-col.s11{width:91.66666%}.w3-col.s12{width:99.99999%}
+@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
+.w3-col.m5{width:41.66666%}.w3-col.m6,.w3-half{width:49.99999%}.w3-col.m7{width:58.33333%}.w3-col.m8,.w3-twothird{width:66.66666%}
+.w3-col.m9,.w3-threequarter{width:74.99999%}.w3-col.m10{width:83.33333%}.w3-col.m11{width:91.66666%}.w3-col.m12{width:99.99999%}}
+@media (min-width:993px){.w3-col.l1{width:8.33333%}.w3-col.l2{width:16.66666%}.w3-col.l3{width:24.99999%}.w3-col.l4{width:33.33333%}
+.w3-col.l5{width:41.66666%}.w3-col.l6{width:49.99999%}.w3-col.l7{width:58.33333%}.w3-col.l8{width:66.66666%}
+.w3-col.l9{width:74.99999%}.w3-col.l10{width:83.33333%}.w3-col.l11{width:91.66666%}.w3-col.l12{width:99.99999%}}
+.w3-rest{overflow:hidden}.w3-stretch{margin-left:-16px;margin-right:-16px}
+.w3-content,.w3-auto{margin-left:auto;margin-right:auto}.w3-content{max-width:980px}.w3-auto{max-width:1140px}
+.w3-cell-row{display:table;width:100%}.w3-cell{display:table-cell}
+.w3-cell-top{vertical-align:top}.w3-cell-middle{vertical-align:middle}.w3-cell-bottom{vertical-align:bottom}
+.w3-hide{display:none!important}.w3-show-block,.w3-show{display:block!important}.w3-show-inline-block{display:inline-block!important}
+@media (max-width:1205px){.w3-auto{max-width:95%}}
+@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
+.w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}  
+.w3-hide-small{display:none!important}.w3-mobile{display:block;width:100%!important}.w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}
+.w3-dropdown-hover.w3-mobile,.w3-dropdown-hover.w3-mobile .w3-btn,.w3-dropdown-hover.w3-mobile .w3-button,.w3-dropdown-click.w3-mobile,.w3-dropdown-click.w3-mobile .w3-btn,.w3-dropdown-click.w3-mobile .w3-button{width:100%}}
+@media (max-width:768px){.w3-modal-content{width:500px}.w3-modal{padding-top:50px}}
+@media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.w3-hide-medium{display:none!important}}
+@media (max-width:992px){.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}.w3-auto{max-width:100%}}
+.w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}
+.w3-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
+.w3-display-topleft{position:absolute;left:0;top:0}.w3-display-topright{position:absolute;right:0;top:0}
+.w3-display-bottomleft{position:absolute;left:0;bottom:0}.w3-display-bottomright{position:absolute;right:0;bottom:0}
+.w3-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+.w3-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
+.w3-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
+.w3-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.w3-display-bottommiddle{position:absolute;left:50%;bottom:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+.w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}.w3-display-hover{display:none}
+.w3-display-position{position:absolute}
+.w3-circle{border-radius:50%}
+.w3-round-small{border-radius:2px}.w3-round,.w3-round-medium{border-radius:4px}.w3-round-large{border-radius:8px}.w3-round-xlarge{border-radius:16px}.w3-round-xxlarge{border-radius:32px}
+.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 8px}
+.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
+.w3-code,.w3-codespan{font-family:Consolas,"courier new";font-size:16px}
+.w3-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
+.w3-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
+.w3-card,.w3-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.w3-spin{animation:w3-spin 2s infinite linear}@keyframes w3-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.w3-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.w3-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.w3-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.w3-animate-bottom{position:relative;animation:animatebottom 0.4s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.w3-animate-input{transition:width 0.4s ease-in-out}.w3-animate-input:focus{width:100%!important}
+.w3-opacity,.w3-hover-opacity:hover{opacity:0.60}.w3-opacity-off,.w3-hover-opacity-off:hover{opacity:1}
+.w3-opacity-max{opacity:0.25}.w3-opacity-min{opacity:0.75}
+.w3-greyscale-max,.w3-grayscale-max,.w3-hover-greyscale:hover,.w3-hover-grayscale:hover{filter:grayscale(100%)}
+.w3-greyscale,.w3-grayscale{filter:grayscale(75%)}.w3-greyscale-min,.w3-grayscale-min{filter:grayscale(50%)}
+.w3-sepia{filter:sepia(75%)}.w3-sepia-max,.w3-hover-sepia:hover{filter:sepia(100%)}.w3-sepia-min{filter:sepia(50%)}
+.w3-tiny{font-size:10px!important}.w3-small{font-size:12px!important}.w3-medium{font-size:15px!important}.w3-large{font-size:18px!important}
+.w3-xlarge{font-size:24px!important}.w3-xxlarge{font-size:36px!important}.w3-xxxlarge{font-size:48px!important}.w3-jumbo{font-size:64px!important}
+.w3-left-align{text-align:left!important}.w3-right-align{text-align:right!important}.w3-justify{text-align:justify!important}.w3-center{text-align:center!important}
+.w3-border-0{border:0!important}.w3-border{border:1px solid #ccc!important}
+.w3-border-top{border-top:1px solid #ccc!important}.w3-border-bottom{border-bottom:1px solid #ccc!important}
+.w3-border-left{border-left:1px solid #ccc!important}.w3-border-right{border-right:1px solid #ccc!important}
+.w3-topbar{border-top:6px solid #ccc!important}.w3-bottombar{border-bottom:6px solid #ccc!important}
+.w3-leftbar{border-left:6px solid #ccc!important}.w3-rightbar{border-right:6px solid #ccc!important}
+.w3-section,.w3-code{margin-top:16px!important;margin-bottom:16px!important}
+.w3-margin{margin:16px!important}.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}
+.w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
+.w3-padding-small{padding:4px 8px!important}.w3-padding{padding:8px 16px!important}.w3-padding-large{padding:12px 24px!important}
+.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.w3-padding-top-64{padding-top:64px!important}.w3-padding-top-48{padding-top:48px!important}
+.w3-padding-top-32{padding-top:32px!important}.w3-padding-top-24{padding-top:24px!important}
+.w3-left{float:left!important}.w3-right{float:right!important}
+.w3-button:hover{color:#000!important;background-color:#ccc!important}
+.w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
+.w3-hover-none:hover{box-shadow:none!important}
+/* Colors */
+.w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
+.w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
+.w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
+.w3-light-blue,.w3-hover-light-blue:hover{color:#000!important;background-color:#87CEEB!important}
+.w3-brown,.w3-hover-brown:hover{color:#fff!important;background-color:#795548!important}
+.w3-cyan,.w3-hover-cyan:hover{color:#000!important;background-color:#00bcd4!important}
+.w3-blue-grey,.w3-hover-blue-grey:hover,.w3-blue-gray,.w3-hover-blue-gray:hover{color:#fff!important;background-color:#607d8b!important}
+.w3-green,.w3-hover-green:hover{color:#fff!important;background-color:#4CAF50!important}
+.w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
+.w3-indigo,.w3-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
+.w3-khaki,.w3-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
+.w3-lime,.w3-hover-lime:hover{color:#000!important;background-color:#cddc39!important}
+.w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.w3-deep-orange,.w3-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
+.w3-pink,.w3-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
+.w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
+.w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
+.w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#f44336!important}
+.w3-sand,.w3-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
+.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
+.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
+.w3-grey,.w3-hover-grey:hover,.w3-gray,.w3-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
+.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
+.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
+.w3-pale-red,.w3-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}
+.w3-pale-green,.w3-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}
+.w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
+.w3-pale-blue,.w3-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
+.w3-text-amber,.w3-hover-text-amber:hover{color:#ffc107!important}
+.w3-text-aqua,.w3-hover-text-aqua:hover{color:#00ffff!important}
+.w3-text-blue,.w3-hover-text-blue:hover{color:#2196F3!important}
+.w3-text-light-blue,.w3-hover-text-light-blue:hover{color:#87CEEB!important}
+.w3-text-brown,.w3-hover-text-brown:hover{color:#795548!important}
+.w3-text-cyan,.w3-hover-text-cyan:hover{color:#00bcd4!important}
+.w3-text-blue-grey,.w3-hover-text-blue-grey:hover,.w3-text-blue-gray,.w3-hover-text-blue-gray:hover{color:#607d8b!important}
+.w3-text-green,.w3-hover-text-green:hover{color:#4CAF50!important}
+.w3-text-light-green,.w3-hover-text-light-green:hover{color:#8bc34a!important}
+.w3-text-indigo,.w3-hover-text-indigo:hover{color:#3f51b5!important}
+.w3-text-khaki,.w3-hover-text-khaki:hover{color:#b4aa50!important}
+.w3-text-lime,.w3-hover-text-lime:hover{color:#cddc39!important}
+.w3-text-orange,.w3-hover-text-orange:hover{color:#ff9800!important}
+.w3-text-deep-orange,.w3-hover-text-deep-orange:hover{color:#ff5722!important}
+.w3-text-pink,.w3-hover-text-pink:hover{color:#e91e63!important}
+.w3-text-purple,.w3-hover-text-purple:hover{color:#9c27b0!important}
+.w3-text-deep-purple,.w3-hover-text-deep-purple:hover{color:#673ab7!important}
+.w3-text-red,.w3-hover-text-red:hover{color:#f44336!important}
+.w3-text-sand,.w3-hover-text-sand:hover{color:#fdf5e6!important}
+.w3-text-teal,.w3-hover-text-teal:hover{color:#009688!important}
+.w3-text-yellow,.w3-hover-text-yellow:hover{color:#d2be0e!important}
+.w3-text-white,.w3-hover-text-white:hover{color:#fff!important}
+.w3-text-black,.w3-hover-text-black:hover{color:#000!important}
+.w3-text-grey,.w3-hover-text-grey:hover,.w3-text-gray,.w3-hover-text-gray:hover{color:#757575!important}
+.w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover{color:#f1f1f1!important}
+.w3-text-dark-grey,.w3-hover-text-dark-grey:hover,.w3-text-dark-gray,.w3-hover-text-dark-gray:hover{color:#3a3a3a!important}
+.w3-border-amber,.w3-hover-border-amber:hover{border-color:#ffc107!important}
+.w3-border-aqua,.w3-hover-border-aqua:hover{border-color:#00ffff!important}
+.w3-border-blue,.w3-hover-border-blue:hover{border-color:#2196F3!important}
+.w3-border-light-blue,.w3-hover-border-light-blue:hover{border-color:#87CEEB!important}
+.w3-border-brown,.w3-hover-border-brown:hover{border-color:#795548!important}
+.w3-border-cyan,.w3-hover-border-cyan:hover{border-color:#00bcd4!important}
+.w3-border-blue-grey,.w3-hover-border-blue-grey:hover,.w3-border-blue-gray,.w3-hover-border-blue-gray:hover{border-color:#607d8b!important}
+.w3-border-green,.w3-hover-border-green:hover{border-color:#4CAF50!important}
+.w3-border-light-green,.w3-hover-border-light-green:hover{border-color:#8bc34a!important}
+.w3-border-indigo,.w3-hover-border-indigo:hover{border-color:#3f51b5!important}
+.w3-border-khaki,.w3-hover-border-khaki:hover{border-color:#f0e68c!important}
+.w3-border-lime,.w3-hover-border-lime:hover{border-color:#cddc39!important}
+.w3-border-orange,.w3-hover-border-orange:hover{border-color:#ff9800!important}
+.w3-border-deep-orange,.w3-hover-border-deep-orange:hover{border-color:#ff5722!important}
+.w3-border-pink,.w3-hover-border-pink:hover{border-color:#e91e63!important}
+.w3-border-purple,.w3-hover-border-purple:hover{border-color:#9c27b0!important}
+.w3-border-deep-purple,.w3-hover-border-deep-purple:hover{border-color:#673ab7!important}
+.w3-border-red,.w3-hover-border-red:hover{border-color:#f44336!important}
+.w3-border-sand,.w3-hover-border-sand:hover{border-color:#fdf5e6!important}
+.w3-border-teal,.w3-hover-border-teal:hover{border-color:#009688!important}
+.w3-border-yellow,.w3-hover-border-yellow:hover{border-color:#ffeb3b!important}
+.w3-border-white,.w3-hover-border-white:hover{border-color:#fff!important}
+.w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}
+.w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#9e9e9e!important}
+.w3-border-light-grey,.w3-hover-border-light-grey:hover,.w3-border-light-gray,.w3-hover-border-light-gray:hover{border-color:#f1f1f1!important}
+.w3-border-dark-grey,.w3-hover-border-dark-grey:hover,.w3-border-dark-gray,.w3-hover-border-dark-gray:hover{border-color:#616161!important}
+.w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
+.w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
+</style>
+<link rel="shortcut icon" href="https://cdn.ly.yongbuzhixi.com/templates/purity_iii_copy/favicon.ico">
 
-         </a>
-         <button
-            class="g-header-button no-appearance focusable content-centered"
-            aria-label="Open search"
-            >
-         <span class="g-header-button__label"><a href="/login">登录</a></span>
-         </button>
-      </header>
-      <div
-      x-data="menu()"
-      class="g-drawer in-menu"
-      :class="{
-      'open': isMenuOpen(),
-      'visible': isMenuAccessible(),
-      'invisible': !isMenuAccessible() 
-      }"
-      @open-menu.window="openMenu()"
-      @keyup.escape.window="closeMenu()"
-      @keydown.window="moveFocus()"
-      >
-      <div class="g-drawer__backdrop" @click="closeMenu()"></div>
-      <div class="g-drawer__content">
-         <div class="g-drawer__header js-menu-item-animate">
-            <a
-               href="#"
-               class="g-logo in-drawer"
-               title="Galerie Theme"
-               >
-            <img src="https://cdn.ly.yongbuzhixi.com/images/ly_logo.png" alt="" width="80" height="30">
-            </a>
-            <button
-               class="g-header-button no-appearance focusable content-centered"
-               aria-label="Close menu"
-               x-ref="close_menu"
-               @click="closeMenu()"
-               >
-            <span
-               class="g-header-button__icon icon-cancel"
-               aria-hidden="true"
-               ></span>
-            <span class="g-header-button__label">Close</span>
-            </button>
-         </div>
-         <div class="g-drawer__body">
-            <div class="g-menu-navigation">
-               <nav
-                  aria-label="Main navigation in menu"
-                  class="js-menu-item-animate"
-                  >
-                  <ul>
-                     <li>
-                        <a
-                           href="#/features/"
-                           class="nav-features"
-                           >
-                        Features
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#/style-guide/"
-                           class="nav-style-guide"
-                           >
-                        Style Guide
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="#/membership/"
-                           class="nav-membership"
-                           >
-                        Membership
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="https://galerie-docs.eduardogomez.io/"
-                           class="nav-documentation"
-                           >
-                        Documentation
-                        </a>
-                     </li>
-                     <li>
-                        <a
-                           href="https://eddiesigner.gumroad.com/l/KgroF"
-                           class="nav-get-galerie"
-                           >
-                        Get Galerie
-                        </a>
-                     </li>
-                  </ul>
-               </nav>
-               <nav
-                  aria-label="Authentication navigation in menu"
-                  class="js-menu-item-animate"
-                  >
-                  <ul>
-                     <li>
-                        <a href="/register">Sign Up</a>
-                     </li>
-                     <li>
-                        <a href="/login">Sign In</a>
-                     </li>
-                  </ul>
-               </nav>
-               <nav
-                  aria-label="Secondary navigation in menu"
-                  class="js-menu-item-animate"
-                  >
-                  <ul>
-                     <li class="nav-newsletter">
-                        <a href="#/newsletter/">
-                        Newsletter
-                        </a>
-                     </li>
-                     <li class="nav-authors">
-                        <a href="#/authors/">
-                        Authors
-                        </a>
-                     </li>
-                     <li class="nav-categories">
-                        <a href="#/tags/">
-                        Categories
-                        </a>
-                     </li>
-                  </ul>
-               </nav>
-            </div>
-            <div class="g-menu-account js-menu-item-animate">
-               <div class="g-theme-toggle ">
-                  <button
-                     class="g-theme-toggle__button light active no-appearance focusable"
-                     :class="{active: savedThemeMode === 'light'}"
-                     @click="setThemeMode('light')"
-                     >
-                  <span
-                     class="icon-sun-light g-theme-toggle__button__icon"
-                     aria-hidden="true"
-                     ></span>
-                  <span class="g-theme-toggle__button__label">
-                  Light
-                  </span>
-                  </button>
-                  <button
-                     class="g-theme-toggle__button dark no-appearance focusable"
-                     :class="{active: savedThemeMode === 'dark'}"
-                     @click="setThemeMode('dark')"
-                     >
-                  <span
-                     class="icon-half-moon g-theme-toggle__button__icon"
-                     aria-hidden="true"
-                     ></span>
-                  <span class="g-theme-toggle__button__label">
-                  Dark
-                  </span>
-                  </button>
-                  <button
-                     class="g-theme-toggle__button system no-appearance focusable"
-                     :class="{active: savedThemeMode === 'system'}"
-                     @click="setThemeMode('system')"
-                     >
-                  <span
-                     class="icon-modern-tv g-theme-toggle__button__icon"
-                     aria-hidden="true"
-                     ></span>
-                  <span class="g-theme-toggle__button__label">
-                  System
-                  </span>
-                  </button>
-               </div>
-            </div>
-         </div>
-         <div class="g-drawer__footer js-menu-item-animate">
-            <nav
-               class="g-drawer__social"
-               aria-label="Social links in menu"
-               >
-               <ul class="g-social-list">
-                  <li>
-                     <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        >
-                     <span class="icon-twitter" aria-hidden="true"></span>
-                     <span class="sr-only">Twitter</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        >
-                     <span class="icon-facebook-squared" aria-hidden="true"></span>
-                     <span class="sr-only">Facebook</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        >
-                     <span class="icon-rss-feed-squared" aria-hidden="true"></span>
-                     <span class="sr-only">RSS</span>
-                     </a>
-                  </li>
-               </ul>
-            </nav>
-            <p class="g-footer-copyright in-menu">
-               <span>LiangYou &copy; 2021</span>
-               <span>
-               Proudly published with <a href="https://laravel.com">Laravel</a>
-               </span>
-            </p>
-         </div>
-      </div>
-      </div>
-      <script>
-         function menu() {
-           return {
-             showMenu: false,
-             accessible: false,
-             firstFocusableElement: null,
-             lastFocusableElement: null,
-             bodyElement: null,
-             savedThemeMode: 'system',
-             init() {
-               this.initThemeMode()
-               const focusableElements = this.$el.querySelectorAll('a[href], button')
-               this.bodyElement = document.querySelector('body')
-               this.firstFocusableElement = focusableElements[0]
-               this.lastFocusableElement = focusableElements[focusableElements.length - 1]
-             },
-             openMenu() {
-               const self = this
-               self.$dispatch('drawer-opened', { drawer: 'menu' })
-               this.showMenu = true
-               this.accessible = true
-               this.bodyElement.classList.add('no-scroll-y')
-         
-               setTimeout(function() {
-                 self.$refs.close_menu.focus()
-               }, 200)
-             },
-             closeMenu() {
-               this.showMenu = false
-               this.bodyElement.classList.remove('no-scroll-y')
-         
-               setTimeout(function() {
-                 this.accessible = false
-               }, 400)
-             },
-             isMenuOpen() {
-               return this.showMenu == true
-             },
-             isMenuAccessible() {
-               return this.accessible == true
-             },
-             moveFocus() {
-               if (
-                 this.$event.target === this.lastFocusableElement &&
-                 this.$event.key === 'Tab' &&
-                 !this.$event.shiftKey
-               ) {
-                 this.$event.preventDefault()
-                 this.firstFocusableElement.focus()
-               } else if (
-                 this.$event.target === this.firstFocusableElement &&
-                 this.$event.key === 'Tab' &&
-                 this.$event.shiftKey
-               ) {
-                 this.$event.preventDefault()
-                 this.lastFocusableElement.focus()
-               }
-             },
-             initThemeMode() {
-               this.savedThemeMode = this.getThemeMode()
-               this.setThemeMode(this.savedThemeMode)
-               this.updateSystemTheme()
-         
-               if (window.matchMedia) {
-                 window.matchMedia('(prefers-color-scheme: dark)')
-                   .addEventListener('change', this.updateSystemTheme.bind(this))
-               }
-             },
-             updateSystemTheme() {
-               if (this.savedThemeMode !== 'system') {
-                 return
-               }
-         
-               if (this.isSystemDark()) {
-                 this.setThemeMode('dark', false)
-               } else {
-                 this.setThemeMode('light', false)
-               }
-             },
-             isSystemDark() {
-               return window.matchMedia
-                 && window.matchMedia('(prefers-color-scheme: dark)').matches
-             },
-             setThemeMode(mode, saveTheme = true) {
-               const html = document.querySelector('html')
-               html.setAttribute('theme-mode', mode)
-         
-               if (saveTheme) {
-                 this.savedThemeMode = mode
-         
-                 if (mode === 'system') {
-                   this.updateSystemTheme()
-                 }
-         
-                 localStorage.setItem('galerie-theme-mode', mode)
-               }
-             },
-             getThemeMode() {
-               const localValue = localStorage.getItem('galerie-theme-mode')
-               if (!localValue) {
-                 return 'system'
-               }
-               return localValue
-             }
-           }
-         }
-      </script>
-      <div
-      x-data="search()"
-      x-effect="performSearch()"
-      class="g-drawer in-search"
-      :class="{
-      'open': isSearchOpen(),
-      'visible': isSearchAccessible(),
-      'invisible': !isSearchAccessible() 
-      }"
-      @open-search.window="openSearch()"
-      @keyup.escape.window="closeSearch()"
-      @keydown.window="moveFocus()"
-      >
-      <div class="g-drawer__backdrop" @click="closeSearch()"></div>
-      <div class="g-drawer__content">
-         <div class="g-drawer__header js-search-item-animate">
-            <a
-               href="#"
-               class="g-logo in-drawer"
-               title="Galerie Theme"
-               >
-            <img src="https://cdn.ly.yongbuzhixi.com/images/ly_logo.png" alt="" width="80" height="30">
-            </a>
-            <button
-               class="g-header-button no-appearance focusable content-centered"
-               aria-label="Close search"
-               x-ref="close_search"
-               @click="closeSearch()"
-               >
-            <span
-               class="g-header-button__icon icon-cancel"
-               aria-hidden="true"
-               ></span>
-            <span class="g-header-button__label">Close</span>
-            </button>
-         </div>
-         <div class="g-drawer__body">
-            <div class="g-search-form js-search-item-animate">
-               <label for="search-input" class="sr-only">
-               Start typing
-               </label>
-               <input
-                  id="search-input"
-                  x-ref="search_input"
-                  x-model.debounce="query"
-                  type="search"
-                  placeholder="Start typing"
-                  autocomplete="off"
-                  spellcheck="false"
-                  class="g-search-form__input no-appearance"
-                  >
-            </div>
-            <div x-show="results.length === 0" x-transition.duration.500ms>
-               <div class="g-search-container js-search-item-animate">
-                  <span class="g-search-section-title">Recent content</span>
-                  <div class="g-search-recent-container">
-                     <article class="g-search-recent">
-                        <a
-                           href="#/4-hill-workouts-that-will-help-you-crush-climbs/"
-                           class="g-search-recent__image"
-                           aria-hidden="true"
-                           tabindex="-1"
-                           >
-                           <div class="g-search-recent__image__fallback">
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 width="32"
-                                 height="32"
-                                 viewBox="0 0 32 32"
-                                 class="g-circles-shape"
-                                 aria-hidden="true"
-                                 >
-                                 <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                    <circle cx="16" cy="16" r="15.5"/>
-                                    <circle cx="16" cy="16" r="7.5"/>
-                                 </g>
-                              </svg>
-                           </div>
-                           <img
-                              data-src="https://galerie.eduardogomez.io/content/images/size/w150/2021/09/andrei-castanha-eOsY4sO0bD8-unsplash--1-.jpg"
-                              alt=""
-                              class="lazy"
-                              width="75"
-                              height="75"
-                              >
-                        </a>
-                        <div class="g-search-recent__main">
-                           <a
-                              href="https://galerie.eduardogomez.io/tag/lifestyle/"
-                              class="g-search-recent__tag"
-                              >
-                           Lifestyle
-                           </a>
-                           <h4 class="g-search-recent__title">
-                              <a href="#/4-hill-workouts-that-will-help-you-crush-climbs/">4 Hill Workouts That Will Help You Crush Climbs</a>
-                           </h4>
-                        </div>
-                     </article>
-                     <article class="g-search-recent">
-                        <a
-                           href="#/turnstiles-new-music-is-so-good-people-are-literally-shitting-themselves/"
-                           class="g-search-recent__image"
-                           aria-hidden="true"
-                           tabindex="-1"
-                           >
-                           <div class="g-search-recent__image__fallback">
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 width="32"
-                                 height="32"
-                                 viewBox="0 0 32 32"
-                                 class="g-circles-shape"
-                                 aria-hidden="true"
-                                 >
-                                 <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                    <circle cx="16" cy="16" r="15.5"/>
-                                    <circle cx="16" cy="16" r="7.5"/>
-                                 </g>
-                              </svg>
-                           </div>
-                           <img
-                              data-src="https://galerie.eduardogomez.io/content/images/size/w150/2021/09/hector-bermudez-iIWDt0fXa84-unsplash.jpg"
-                              alt=""
-                              class="lazy"
-                              width="75"
-                              height="75"
-                              >
-                        </a>
-                        <div class="g-search-recent__main">
-                           <a
-                              href="https://galerie.eduardogomez.io/tag/culture/"
-                              class="g-search-recent__tag"
-                              >
-                           Culture
-                           </a>
-                           <h4 class="g-search-recent__title">
-                              <a href="#/turnstiles-new-music-is-so-good-people-are-literally-shitting-themselves/">Turnstile’s New Music Is So Good People Are Literally Shitting Themselves</a>
-                           </h4>
-                        </div>
-                     </article>
-                     <article class="g-search-recent">
-                        <a
-                           href="#/interview-with-daina-lightfoot-galerie-magazine/"
-                           class="g-search-recent__image"
-                           aria-hidden="true"
-                           tabindex="-1"
-                           >
-                           <div class="g-search-recent__image__fallback">
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 width="32"
-                                 height="32"
-                                 viewBox="0 0 32 32"
-                                 class="g-circles-shape"
-                                 aria-hidden="true"
-                                 >
-                                 <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                    <circle cx="16" cy="16" r="15.5"/>
-                                    <circle cx="16" cy="16" r="7.5"/>
-                                 </g>
-                              </svg>
-                           </div>
-                           <img
-                              data-src="https://galerie.eduardogomez.io/content/images/size/w150/2021/09/aiony-haust-3TLl_97HNJo-unsplash--1-.jpg"
-                              alt=""
-                              class="lazy"
-                              width="75"
-                              height="75"
-                              >
-                        </a>
-                        <div class="g-search-recent__main">
-                           <a
-                              href="https://galerie.eduardogomez.io/tag/people/"
-                              class="g-search-recent__tag"
-                              >
-                           People
-                           </a>
-                           <h4 class="g-search-recent__title">
-                              <a href="#/interview-with-daina-lightfoot-galerie-magazine/">Interview with Daina Lightfoot - Galerie Magazine</a>
-                           </h4>
-                        </div>
-                     </article>
-                     <article class="g-search-recent">
-                        <a
-                           href="#/see-how-five-emerging-photographers-turned-2021-into-art/"
-                           class="g-search-recent__image"
-                           aria-hidden="true"
-                           tabindex="-1"
-                           >
-                           <div class="g-search-recent__image__fallback">
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 width="32"
-                                 height="32"
-                                 viewBox="0 0 32 32"
-                                 class="g-circles-shape"
-                                 aria-hidden="true"
-                                 >
-                                 <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                    <circle cx="16" cy="16" r="15.5"/>
-                                    <circle cx="16" cy="16" r="7.5"/>
-                                 </g>
-                              </svg>
-                           </div>
-                           <img
-                              data-src="https://galerie.eduardogomez.io/content/images/size/w150/2021/09/dom-aguiar-dpRdRWaaAik-unsplash--1-.jpg"
-                              alt=""
-                              class="lazy"
-                              width="75"
-                              height="75"
-                              >
-                        </a>
-                        <div class="g-search-recent__main">
-                           <a
-                              href="https://galerie.eduardogomez.io/tag/fashion/"
-                              class="g-search-recent__tag"
-                              >
-                           Fashion
-                           </a>
-                           <h4 class="g-search-recent__title">
-                              <a href="#/see-how-five-emerging-photographers-turned-2021-into-art/">See How Five Emerging Photographers Turned 2021 into Art</a>
-                           </h4>
-                        </div>
-                     </article>
-                  </div>
-               </div>
-               <div class="g-search-container js-search-item-animate">
-                  <span class="g-search-section-title">Popular topics</span>
-                  <ul class="g-search-tags-list">
-                     <li>
-                        <a href="#/tag/lifestyle/" class="g-search-tag">Lifestyle</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/people/" class="g-search-tag">People</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/culture/" class="g-search-tag">Culture</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/technology/" class="g-search-tag">Technology</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/landscape/" class="g-search-tag">Landscape</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/design/" class="g-search-tag">Design</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/nature/" class="g-search-tag">Nature</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/architecture/" class="g-search-tag">Architecture</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/film/" class="g-search-tag">Film</a>
-                     </li>
-                     <li>
-                        <a href="#/tag/portrait/" class="g-search-tag">Portrait</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-            <div
-               x-show="results.length > 0"
-               x-transition:enter.duration.500ms.delay.500ms
-               x-transition:leave.duration.0ms
-               >
-               <div class="g-search-container js-search-item-animate">
-                  <div class="g-search-results-container">
-                     <template x-for="result in results" :key="result.id">
-                        <article class="g-search-result">
-                           <a
-                              :href="result.url"
-                              class="g-search-result__image"
-                              aria-hidden="true"
-                              tabindex="-1"
-                              >
-                              <div class="g-search-result__image__fallback">
-                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    viewBox="0 0 32 32"
-                                    class="g-circles-shape"
-                                    aria-hidden="true"
-                                    >
-                                    <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                       <circle cx="16" cy="16" r="15.5"/>
-                                       <circle cx="16" cy="16" r="7.5"/>
-                                    </g>
-                                 </svg>
-                              </div>
-                              <img
-                                 x-show="result.feature_image"
-                                 :src="result.feature_image"
-                                 :alt="result.feature_image_alt"
-                                 width="350"
-                                 height="200"
-                                 >
-                           </a>
-                           <h4 class="g-search-result__title">
-                              <a :href="result.url" x-text="result.title"></a>
-                           </h4>
-                        </article>
-                     </template>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      <script>
-         function search() {
-           return {
-             showSearch: false,
-             accessible: false,
-             firstFocusableElement: null,
-             lastFocusableElement: null,
-             bodyElement: null,
-             query: '',
-             searchEnabled: false,
-             results: [],
-             init() {
-               const focusableElements = this.$el.querySelectorAll('a[href], input, button')
-               this.bodyElement = document.querySelector('body')
-               this.firstFocusableElement = focusableElements[0]
-               this.lastFocusableElement = focusableElements[focusableElements.length - 1]
-               this.checkSearchFeature()
-             },
-             openSearch() {
-               const self = this
-               self.$dispatch('drawer-opened', { drawer: 'search' })
-               self.showSearch = true
-               self.accessible = true
-               self.bodyElement.classList.add('no-scroll-y')
-         
-               setTimeout(() => {
-                 self.$refs.search_input.focus()
-               }, 200)
-             },
-             closeSearch() {
-               this.showSearch = false
-               this.bodyElement.classList.remove('no-scroll-y')
-               setTimeout(() => {
-                 this.accessible = false
-               }, 400)
-             },
-             checkSearchFeature() {
-               if (typeof ghostApiKey === 'undefined') {
-                 console.error(
-                   'Please make sure to setup the Content API custom integration in the Ghost Admin first, see the documentation for more information.'
-                 )
-               } else {
-                 this.searchEnabled = true
-               }
-             },
-             performSearch() {
-               if (this.showSearch && this.searchEnabled) {
-                 if (this.query.length > 0) {
-                   this.$dispatch(
-                     'search-performed',
-                     {
-                       query: this.query,
-                       callback: this.handleResults.bind(this)
-                     }
-                   )
-                 } else {
-                   this.results = []
-                 }
-               }
-             },
-             handleResults(results) {
-               this.results = results
-             },
-             isSearchOpen() {
-               return this.showSearch === true
-             },
-             isSearchAccessible() {
-               return this.accessible === true
-             },
-             moveFocus() {
-               if (
-                 this.$event.target === this.lastFocusableElement &&
-                 this.$event.key === 'Tab' &&
-                 !this.$event.shiftKey
-               ) {
-                 this.$event.preventDefault()
-                 this.firstFocusableElement.focus()
-               } else if (
-                 this.$event.target === this.firstFocusableElement &&
-                 this.$event.key === 'Tab' &&
-                 this.$event.shiftKey
-               ) {
-                 this.$event.preventDefault()
-                 this.lastFocusableElement.focus()
-               }
-             }
-           }
-         }
-      </script>
-      <div
-         class="g-load-transition__container "
-         >
-         <div class="g-main-container" x-data="home()">
-            <main role="main">
-               <section class="g-home-slider">
-                  <div class="swiper js-slider">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <div class="g-home-slide with-image">
-                              <div class="g-hero-image">
-                                 <img
-                                    data-src="https://i.loli.net/2021/10/20/ITfMB2SNsCp9h6G.png"
-                                    data-srcset="
-                                    https://i.loli.net/2021/10/20/ITfMB2SNsCp9h6G.png 500w,
-                                    https://i.loli.net/2021/10/20/ITfMB2SNsCp9h6G.png 1000w,
-                                    https://i.loli.net/2021/10/20/ITfMB2SNsCp9h6G.png 2000w
-                                    "
-                                    sizes="100vw"
-                                    alt=""
-                                    width="1440"
-                                    height="1024"
-                                    class="g-hero-image__image lazy"
-                                    >
-                                 <div class="g-hero-image__gradient"></div>
-                              </div>
-                              <div class="g-home-slide__shape">
-                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="520"
-                                    height="520"
-                                    viewBox="0 0 520 520"
-                                    class="g-circles-shape alt-version"
-                                    aria-hidden="true"
-                                    >
-                                    <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                       <circle cx="260" cy="260" r="187.5"/>
-                                       <circle cx="260" cy="260" r="259.5"/>
-                                       <circle cx="259.5" cy="260.5" r="115"/>
-                                    </g>
-                                 </svg>
-                              </div>
-                              <div
-                                 class="g-home-slide__content"
-                                 data-swiper-parallax="-25%"
-                                 data-swiper-parallax-duration="700"
-                                 >
-                                 <h1 class="g-home-slide__title thin">
-                                    <a href="https://galerie.eduardogomez.io/see-how-five-emerging-photographers-turned-2021-into-art/">
-                                    See How Five Emerging Photographers Turned 2021 into Art
-                                    </a>
-                                 </h1>
-                                 <p class="g-home-slide__description">Five artists offer a glimpse at their interior lives during a period of unprecedented change.</p>
-                                 <a
-                                    class="g-home-slide__cta-link"
-                                    href="#/see-how-five-emerging-photographers-turned-2021-into-art/"
-                                    aria-hidden="true"
-                                    tabindex="-1"
-                                    >
-                                 Read More
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="g-home-slide with-image">
-                              <div class="g-hero-image">
-                                 <img
-                                    data-src="https://galerie.eduardogomez.io/content/images/size/w1000/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg"
-                                    data-srcset="
-                                    https://galerie.eduardogomez.io/content/images/size/w500/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg 500w,
-                                    https://galerie.eduardogomez.io/content/images/size/w1000/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg 1000w,
-                                    https://galerie.eduardogomez.io/content/images/size/w2000/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg 2000w
-                                    "
-                                    sizes="100vw"
-                                    alt=""
-                                    width="1440"
-                                    height="1024"
-                                    class="g-hero-image__image lazy"
-                                    >
-                                 <div class="g-hero-image__gradient"></div>
-                              </div>
-                              <div class="g-home-slide__shape">
-                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="520"
-                                    height="520"
-                                    viewBox="0 0 520 520"
-                                    class="g-circles-shape alt-version"
-                                    aria-hidden="true"
-                                    >
-                                    <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                       <circle cx="260" cy="260" r="187.5"/>
-                                       <circle cx="260" cy="260" r="259.5"/>
-                                       <circle cx="259.5" cy="260.5" r="115"/>
-                                    </g>
-                                 </svg>
-                              </div>
-                              <div
-                                 class="g-home-slide__content"
-                                 data-swiper-parallax="-25%"
-                                 data-swiper-parallax-duration="700"
-                                 >
-                                 <h1 class="g-home-slide__title thin">
-                                    <a href="https://galerie.eduardogomez.io/how-to-get-different-audiences-to-hear-your-music/">
-                                    How to Get Different Audiences to Hear Your Original Music
-                                    </a>
-                                 </h1>
-                                 <p class="g-home-slide__description">Look for unique opportunities to showcase your work — you may be surprised by the reactions you get.</p>
-                                 <a
-                                    class="g-home-slide__cta-link"
-                                    href="#/how-to-get-different-audiences-to-hear-your-music/"
-                                    aria-hidden="true"
-                                    tabindex="-1"
-                                    >
-                                 Read More
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="g-home-slide with-image">
-                              <div class="g-hero-image">
-                                 <img
-                                    data-src="https://galerie.eduardogomez.io/content/images/size/w1000/2021/09/spacex-MEW1f-yu2KI-unsplash.jpg"
-                                    data-srcset="
-                                    https://galerie.eduardogomez.io/content/images/size/w500/2021/09/spacex-MEW1f-yu2KI-unsplash.jpg 500w,
-                                    https://galerie.eduardogomez.io/content/images/size/w1000/2021/09/spacex-MEW1f-yu2KI-unsplash.jpg 1000w,
-                                    https://galerie.eduardogomez.io/content/images/size/w2000/2021/09/spacex-MEW1f-yu2KI-unsplash.jpg 2000w
-                                    "
-                                    sizes="100vw"
-                                    alt=""
-                                    width="1440"
-                                    height="1024"
-                                    class="g-hero-image__image lazy"
-                                    >
-                                 <div class="g-hero-image__gradient"></div>
-                              </div>
-                              <div class="g-home-slide__shape">
-                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="520"
-                                    height="520"
-                                    viewBox="0 0 520 520"
-                                    class="g-circles-shape alt-version"
-                                    aria-hidden="true"
-                                    >
-                                    <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                                       <circle cx="260" cy="260" r="187.5"/>
-                                       <circle cx="260" cy="260" r="259.5"/>
-                                       <circle cx="259.5" cy="260.5" r="115"/>
-                                    </g>
-                                 </svg>
-                              </div>
-                              <div
-                                 class="g-home-slide__content"
-                                 data-swiper-parallax="-25%"
-                                 data-swiper-parallax-duration="700"
-                                 >
-                                 <h1 class="g-home-slide__title thin">
-                                    <a href="https://galerie.eduardogomez.io/elon-musk-is-maybe-actually-strangely-going-to-do-this-mars-thing/">
-                                    Elon Musk Is Maybe, Actually, Strangely, Going to Do This Mars Thing
-                                    </a>
-                                 </h1>
-                                 <p class="g-home-slide__description">From his private Cape Canaveral, the billionaire is manifesting his own interplanetary reality—whatever the cost.</p>
-                                 <a
-                                    class="g-home-slide__cta-link"
-                                    href="#/elon-musk-is-maybe-actually-strangely-going-to-do-this-mars-thing/"
-                                    aria-hidden="true"
-                                    tabindex="-1"
-                                    >
-                                 Read More
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-pagination js-slider-control"></div>
-                     <div class="g-home-silder__nav js-slider-control">
-                        <div>
-                           <button
-                              class="swiper-button-next no-appearance"
-                              aria-label="Next featured story"
-                              >
-                           <span class="icon-arrow-right" aria-hidden="true"></span>
-                           </button>
-                           <button
-                              class="swiper-button-prev no-appearance"
-                              aria-label="Previous featured story"
-                              >
-                           <span class="icon-arrow-left" aria-hidden="true"></span>
-                           </button>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="g-home-slide__bottom">
-                     <button
-                        class="g-home-scroll js-slider-control no-appearance"
-                        aria-label="Scroll to content"
-                        @click="scrollToContent()"
-                        >
-                     <span></span>
-                     </button>
-                  </div>
-               </section>
-               <section
-                  x-data="loop()"
-                  class="g-post-grid__container"
-                  :class="{'no-more-posts': !hasMorePosts && postsAdded.length > 0}"
-                  @load-more-listener-ready.window="loadPreviousPages()"
-                  >
-                  <div
-                     class="g-posts-grid default js-main-content"
-                     >
+<head>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+a:link {
+    text-decoration: none;
+   color: red;
+}
+a:visited {
+    text-decoration: none;
+   color: red;
+}
+a:hover {
+    text-decoration: underline;
+   color: red;
+}
+a:active {
+    text-decoration: none;
+   color: red;
+}
+.w3-bar .w3-button {
+  padding: 16px;
+}
+.mySlides {display:none;}
+.w3-left, .w3-right {cursor:pointer}
+.w3-navbar li a {
+    padding: 16px;
+    float: left;
+}
+</style>
 
-                     <div class="g-posts-grid__item">
-                        <article
-                           class="g-post-card  "
-                           >
-                           <a
-                              href="#/how-to-get-different-audiences-to-hear-your-music/"
-                              class="g-post-card__image-link focusable"
-                              >
-                           <span class="sr-only">How to Get Different Audiences to Hear Your Original Music</span>
-                           <img
-                              data-src="https://galerie.eduardogomez.io/content/images/size/w1000/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg"
-                              data-srcset="
-                              https://galerie.eduardogomez.io/content/images/size/w500/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg 500w,
-                              https://galerie.eduardogomez.io/content/images/size/w1000/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg 1000w,
-                              https://galerie.eduardogomez.io/content/images/size/w2000/2021/09/natalia-sobolivska-TD2CMnQB23E-unsplash--1-.jpg 1400w
-                              "
-                              sizes="
-                              (min-width: 90rem) 60vw,
-                              (min-width: 45rem) calc(50vw - 1.25rem),
-                              calc(100vw - 1.25rem)
-                              "
-                              alt=""
-                              class="g-post-card__image lazy "
-                              >
-                           </a>
-                           <div
-                              class="g-post-card__content  "
-                              >
-                              <div class="g-post-card__content__wrapper">
-                                 <div
-                                    class="g-post-card__badge "
-                                    >
-                                    <span
-                                       aria-hidden="true"
-                                       style="background-image: url(https://galerie.eduardogomez.io/assets/images/award-left.png?v=bf041f893a);"
-                                       ></span>
-                                    <span>
-                                    Featured story
-                                    </span>
-                                    <span
-                                       aria-hidden="true"
-                                       style="background-image: url(https://galerie.eduardogomez.io/assets/images/award-right.png?v=bf041f893a);"
-                                       ></span>
-                                 </div>
-                                 <h2
-                                    class="g-post-card__title"
-                                    aria-hidden="true"
-                                    >
-                                    <a
-                                       href="#/how-to-get-different-audiences-to-hear-your-music/"
-                                       aria-hidden="true"
-                                       tabindex="-1"
-                                       >
-                                    How to Get Different Audiences to Hear Your Original Music
-                                    </a>
-                                 </h2>
-                                 <a href="https://galerie.eduardogomez.io/tag/lifestyle/" class="g-post-card__tag">
-                                 Lifestyle
-                                 </a>
-                              </div>
-                           </div>
-                        </article>
-                     </div>
-                  </div>
-                  <div
-                     x-show="hasMorePosts"
-                     class="g-post-grid__button-container"
-                     x-transition:leave.duration.300ms
-                     >
-                     <button
-                        class="g-button wide no-appearance focusable"
-                        :class="{'loading': loading}"
-                        :disabled="loading"
-                        >
-                        <a href="/register">立即申请</a>
-                     </button>
-                  </div>
-               </section>
-               <script>
-                  function loop() {
-                    return {
-                      loopEnabled: false,
-                      postsAdded: [],
-                      page: 2,
-                      pageFromUrl: 1,
-                      hasMorePosts: true,
-                      loading: false,
-                      init() {
-                        this.checkLoopFeature()
-                      },
-                      checkLoopFeature() {
-                        if (typeof ghostApiKey === 'undefined') {
-                          console.error(
-                            'Please make sure to setup the Content API custom integration in the Ghost Admin first, see the documentation for more information.'
-                          )
-                        } else {
-                          this.loopEnabled = true
-                        }
-                      },
-                      loadMorePosts(shouldUpdateURL = true) {
-                        if (!this.loopEnabled) {
-                          return
-                        }
-                  
-                        this.loading = true
-                        this.$dispatch(
-                          'load-more-performed',
-                          {
-                            filter:
-                              typeof window.currentLoopFilter !== 'undefined' ? window.currentLoopFilter : '',
-                            page: this.page,
-                            callback: this.handleResults.bind(this)
-                          }
-                        )
-                  
-                        if (shouldUpdateURL) {
-                          this.updateCurrentURL()
-                        }
-                  
-                        this.page += 1
-                      },
-                      handleResults(response) {
-                        this.loading = false
-                  
-                        if (response.error) {
-                          console.error(response.error)
-                          return
-                        }
-                  
-                        if (!response.meta.pagination.next) {
-                          this.hasMorePosts = false
-                        }
-                  
-                        if (response.length > 0) {
-                          const mappedPosts = response.map((post) => {
-                            const item = post
-                  
-                            if (
-                              item.feature_image &&
-                              item.feature_image.indexOf('https://galerie.eduardogomez.io/content/images/') > -1
-                            ) {
-                              item.feature_image_medium = item.feature_image.replace(
-                                'https://galerie.eduardogomez.io/content/images/',
-                                'https://galerie.eduardogomez.io/content/images/size/w500/'
-                              )
-                              item.feature_image_large = item.feature_image.replace(
-                                'https://galerie.eduardogomez.io/content/images/',
-                                'https://galerie.eduardogomez.io/content/images/size/w1000/'
-                              )
-                              item.feature_image_extra_large = item.feature_image.replace(
-                                'https://galerie.eduardogomez.io/content/images/',
-                                'https://galerie.eduardogomez.io/content/images/size/w2000/'
-                              )
-                            }
-                  
-                            return item
-                          })
-                  
-                          this.postsAdded = this.postsAdded.concat(mappedPosts)
-                          this.$nextTick(() => {
-                            this.$dispatch('ajax-content-loaded')
-                          })
-                        }
-                  
-                        if (this.pageFromUrl > 1) {
-                          this.pageFromUrl -= 1
-                          this.loadMorePosts(false)
-                        }
-                      },
-                      updateCurrentURL() {
-                        const url = new URL(window.location.href)
-                  
-                        if (url.searchParams.has('page')) {
-                          url.searchParams.set('page', this.page)
-                        } else {
-                          url.searchParams.append('page', this.page)
-                        }
-                  
-                        history.pushState({}, null, url)
-                      },
-                      loadPreviousPages() {
-                        if (!this.loopEnabled) {
-                          return
-                        }
-                  
-                        const pageParam = this.getUrlParameter('page')
-                  
-                        if (pageParam) {
-                          const page = Number(pageParam)
-                  
-                          if (page > 1) {
-                            this.pageFromUrl = page - 1
-                            this.loadMorePosts(false)
-                          }
-                        }
-                      },
-                      getUrlParameter(param) {
-                        const query = window.location.search.substring(1)
-                        const params = query.split('&')
-                  
-                        for (let x = 0; x < params.length; x++) {
-                          const pair = params[x].split('=')
-                  
-                          if (pair[0] === param) {
-                            return decodeURIComponent(pair[1])
-                          }
-                        }
-                  
-                        return false
-                      }
-                    }
-                  }
-               </script>
-               <section class="g-newsletter">
-                  <div class="g-newsletter__shape">
-                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="520"
-                        height="520"
-                        viewBox="0 0 520 520"
-                        class="g-circles-shape alt-version"
-                        aria-hidden="true"
-                        >
-                        <g fill="none" fill-rule="evenodd" class="stroke-shape">
-                           <circle cx="260" cy="260" r="187.5"/>
-                           <circle cx="260" cy="260" r="259.5"/>
-                           <circle cx="259.5" cy="260.5" r="115"/>
-                        </g>
-                     </svg>
-                  </div>
-                  <div class="g-newsletter__wrapper">
-                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="114"
-                        height="69"
-                        viewBox="0 0 114 69"
-                        aria-hidden="true"
-                        class="g-newsletter__icon"
-                        >
-                        <g
-                           fill="none"
-                           fill-rule="evenodd"
-                           transform="translate(1.837 1.278)"
-                           >
-                           <g opacity=".2">
-                              <g transform="rotate(-8 73.542 -451.079)">
-                                 <polyline
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    points="10.5 20.303 21 27.653 31.5 20.303"
-                                    class="fill"
-                                    />
-                                 <path
-                                    stroke-width="1.5"
-                                    d="M0,37.1028404 L0,14.2800404 C0,12.8047294 0.774035035,11.4375879 2.0391,10.6785404 L18.8391,0.598540408 C20.1691749,-0.199513469 21.8308251,-0.199513469 23.1609,0.598540408 L39.9609,10.6785404 C41.225965,11.4375879 42,12.8047294 42,14.2800404 L42,37.1028404 C42,39.4224364 40.1195959,41.3028404 37.8,41.3028404 L4.2,41.3028404 C1.88040405,41.3028404 0,39.4224364 0,37.1028404 Z"
-                                    class="fill"
-                                    />
-                              </g>
-                           </g>
-                           <g opacity=".202">
-                              <g transform="rotate(-24 92.996 19.767)">
-                                 <polyline
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    points="10.5 8.4 21 15.75 31.5 8.4"
-                                    class="fill"
-                                    />
-                                 <path
-                                    stroke-width="1.5"
-                                    d="M0,25.2 L0,4.2 C0,1.88040405 1.88040405,0 4.2,0 L37.8,0 C40.1195959,0 42,1.88040405 42,4.2 L42,25.2 C42,27.5195959 40.1195959,29.4 37.8,29.4 L4.2,29.4 C1.88040405,29.4 0,27.5195959 0,25.2 Z"
-                                    class="fill"
-                                    />
-                              </g>
-                           </g>
-                        </g>
-                     </svg>
-                     <div class="g-newsletter__container">
-                        <div class="g-newsletter__callout">
-                           <h2 class="g-newsletter__title">
-                              Subscribe to our Newsletter and stay up to date!
-                           </h2>
-                        </div>
-                        <form
-                           id="newsletter-form"
-                           data-members-form="subscribe"
-                           class="g-auth-form-container"
-                           >
-                           <div class="g-auth-form-container__normal">
-                              <p class="g-newsletter__text spacing">
-                                 Subscribe to our newsletter for the latest news and work updates straight to your inbox.
-                              </p>
-                              <div class="g-auth-form">
-                                 <label for="newsletter-input" class="sr-only">
-                                 Enter your email address
-                                 </label>
-                                 <input
-                                    id="newsletter-input"
-                                    data-members-email
-                                    type="email"
-                                    required
-                                    placeholder="Enter your email address"
-                                    class="g-auth-form__input no-appearance"
-                                    />
-                                 <button
-                                    id="newsletter-button"
-                                    type="submit"
-                                    aria-label="Subscribe Now"
-                                    class="g-auth-form__button no-appearance"
-                                    >
-                                 <span class="icon-arrow-right" aria-hidden="true"></span>
-                                 </button>
-                              </div>
-                              <div class="g-auth-form-container__error">
-                                 <p class="g-auth-error">
-                                    Oops! There was an error sending the email, please try again.
-                                 </p>
-                              </div>
-                           </div>
-                           <div class="g-auth-form-container__success">
-                              <div class="g-auth-success">
-                                 <div class="g-auth-success__icon">
-                                    <img
-                                       src="https://galerie.eduardogomez.io/assets/images/success.svg?v=bf041f893a"
-                                       alt=""
-                                       aria-hidden="true"
-                                       width="42"
-                                       height="42"
-                                       >
-                                 </div>
-                                 <p class="g-auth-success__text">
-                                    Awesome! Now check your inbox and click the link to confirm your subscription.
-                                 </p>
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </section>
-            </main>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H7844KMRLX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H7844KMRLX');
+</script>
+
+<script src="https://kit.fontawesome.com/e77e793981.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+   <div class="w3-bar w3-white w3-card w3-padding">
+      <a title="良友电台开放平台" href="#home" class="w3-bar-item w3-hover-pale-red"><img src="https://i.loli.net/2021/10/27/yt1Nki56r8JKQoM.png" alt="良友电台开放平台"></a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right">
+         <a href="https://forms.office.com/r/bLsvqkXdut" class="w3-button w3-round-large w3-red" title="立即申请" target="_blank">立即申请</a>
+      </div>
+   </div>
+</div>   
+
+<!-- Automatic Slideshow -->
+<div class="w3-content w3-display-container" style="max-width:1800px;margin-top:60px" id="home">
+   <div class="w3-display-container mySlides">
+      <img src="https://i.loli.net/2021/10/27/Rih8Ic4PWAnOM3o.jpg" style="width:100%">
+      <div class="w3-display-bottommiddle w3-container w3-xlarge w3-text-white">
+         成功申请者，为你提供音频接口
+      </div>
+   </div>  
+   <div class="w3-display-container mySlides">
+      <img src="https://i.loli.net/2021/10/27/kWKb3exLXAMErFu.jpg" style="width:100%">
+      <div class="w3-display-bottommiddle w3-container w3-xlarge w3-text-white">
+         让你轻松接入良友电台音频内容
+      </div>
+   </div>
+   <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+   <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<!-- Content -->
+<div class="w3-container w3-light-grey w3-padding-48">
+   <div class="w3-row-padding">
+      <div class="w3-half w3-large">
+         <p>一直以来，良友电台盼望透过广播福音信息，把人带到神面前。因此，我们制作的节目，都欢迎听众下载收听、分享。<br>现在，我们特设开放平台，欢迎有心把基督福音广传的开发者，经简单申请后取得良友电台提供的音频接口，应用于你们自建的平台，<br>让更多人得闻福音，得着帮助。</p>
+      </div>
+      <div class="w3-half w3-center">
+         <i class='fas fa-share-square' style='font-size:100px'></i>
+      </div>
+   </div>
+</div>
+
+<div class="w3-container w3-padding-48">
+   <div class="w3-row-padding">
+      <div class="w3-half w3-center">
+         <i class='far fa-list-alt' style='font-size:100px'></i>
+      </div>
+      <div class="w3-half">
+         <h3 class="w3-text-red"><b>使用原则</b></h3>
+         <div class="w3-large">开发者使用良友电台的节目时，需要遵守以下原则：<br>
+            1. 请为你的听众提供我们完整的节目，不可修改当中的内容。<br>
+            2. 不可滥用或作商业谋利用途。<br>
+            3. 请注明版权属良友电台。<br>
+            <p> </p>
          </div>
-         <script>
-            function home() {
-              return {
-                scrollToContent() {
-                  this.$dispatch('scroll-to', { element: '.js-main-content' })
-                }
-              }
-            }
-         </script>
-         <footer class="g-footer" x-data>
-            <div class="g-wrapper">
-               <div class="g-footer__main">
-                  <a href="#" class="g-footer-title">良友开放平台</a>
-                  <button
-                     class="g-footer-button no-appearance focusable content-centered"
-                     aria-label="Open search"
-                     @click="$dispatch('open-search')"
-                     >
-                  <span class="icon-search" aria-hidden="true"></span>
-                  </button>
-                  <div class="g-footer-navigation">
-                     <nav aria-label="Main navigation in footer">
-                        <ul>
-                           <li>
-                              <a
-                                 href="#/features/"
-                                 class="nav-features"
-                                 >
-                              Features
-                              </a>
-                           </li>
-                           <li>
-                              <a
-                                 href="#/style-guide/"
-                                 class="nav-style-guide"
-                                 >
-                              Style Guide
-                              </a>
-                           </li>
-                           <li>
-                              <a
-                                 href="#/membership/"
-                                 class="nav-membership"
-                                 >
-                              Membership
-                              </a>
-                           </li>
-                           <li>
-                              <a
-                                 href="#"
-                                 class="nav-documentation"
-                                 >
-                              Documentation
-                              </a>
-                           </li>
-                        </ul>
-                     </nav>
-                     <nav aria-label="Secondary navigation in footer">
-                        <ul>
-                           <li class="nav-newsletter">
-                              <a href="/api/programs">
-                              Programs
-                              </a>
-                           </li>
-                           <li class="nav-authors">
-                              <a href="/api/today">
-                              Today
-                              </a>
-                           </li>
-                           <li class="nav-categories">
-                              <a href="/api/categories">
-                              Categories
-                              </a>
-                           </li>
-                           <li class="nav-error-page">
-                              <a href="/api/program/cc">
-                              CC
-                              </a>
-                           </li>
-                        </ul>
-                     </nav>
-                     <nav aria-label="Authentication navigation in footer">
-                        <ul>
-                           <li>
-                              <a href="/register">Sign Up</a>
-                           </li>
-                           <li>
-                              <a href="/login">Sign In</a>
-                           </li>
-                        </ul>
-                     </nav>
-                  </div>
-               </div>
-               <div class="g-footer__bottom">
-                  <nav class="g-footer__social" aria-label="Social links in footer">
-                     <ul class="g-social-list">
-                        <li>
-                           <a
-                              href="#"
-                              target="_blank"
-                              rel="noopener"
-                              >
-                           <span class="icon-twitter" aria-hidden="true"></span>
-                           <span class="sr-only">Twitter</span>
-                           </a>
-                        </li>
-                        <li>
-                           <a
-                              href="#"
-                              target="_blank"
-                              rel="noopener"
-                              >
-                           <span class="icon-facebook-squared" aria-hidden="true"></span>
-                           <span class="sr-only">Facebook</span>
-                           </a>
-                        </li>
-                        <li>
-                           <a
-                              href="#"
-                              target="_blank"
-                              rel="noopener"
-                              >
-                           <span class="icon-rss-feed-squared" aria-hidden="true"></span>
-                           <span class="sr-only">RSS</span>
-                           </a>
-                        </li>
-                     </ul>
-                  </nav>
-                  <p class="g-footer-copyright">
-                     <span>LiangYou &copy; 2021</span>
-                     <span>—</span>
-                     <span>
-                     Proudly published with <a href="https://laravel.com">Laravel</a>
-                     </span>
-                  </p>
-               </div>
-            </div>
-         </footer>
       </div>
-      <div class="g-load-transition__overlay" aria-hidden="true">
-         <a
-            href="#"
-            class="g-logo "
-            title="Galerie Theme"
-            >
-         <img src="https://cdn.ly.yongbuzhixi.com/images/ly_logo.png" alt="" width="80" height="30">
-         </a>
+   </div>
+</div>
+
+<div class="w3-container w3-light-grey w3-padding-48">
+   <div class="w3-row-padding">
+      <div class="w3-half w3-large">
+         <h3 class="w3-text-red"><b>申请流程</b></h3>
+         <div class="w3-large">1. 填写并递交申请表格。<br>
+            2. 等候良友电台回复。<br>
+            3. 成功申请者可获相关的JSON feed。<br>
+            <p> </p>
+         </div>
       </div>
-      <script src="https://galerie.eduardogomez.io/assets/js/manifest.js?v=bf041f893a" defer></script>
-      <script src="https://galerie.eduardogomez.io/assets/js/vendor.js?v=bf041f893a" defer></script>
-      <script src="https://galerie.eduardogomez.io/assets/js/app.js?v=bf041f893a" defer></script>
-      <script defer src="https://galerie.eduardogomez.io/assets/js/home.js?v=bf041f893a"></script>
-   </body>
+      <div class="w3-half w3-center">
+         <i class='fas fa-edit' style='font-size:100px'></i>
+      </div>
+   </div>
+</div>
+
+<div class="w3-container w3-center w3-padding-48">
+   <div class="w3-bar">
+      <a title="立即申请" href="https://forms.office.com/r/bLsvqkXdut" target="_blank"><button class="w3-button w3-round-large w3-red w3-xlarge">立即申请</button></a>
+   </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48">
+   <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><b>↑</b> 返回页首</a>
+    <p><a href="mailto:register@liangyou.net" title="联络我们" target="_blank">联络我们</a>｜<a href="https://h.729ly.net" title="帮助中心" target="_blank">帮助中心</a></p>
+   <p>﻿﻿© 2002-
+      <script language="javascript" type="text/javascript">
+         var today = new Date()
+         var year = today.getFullYear()
+         document.write(year)
+      </script>
+      <a href="https://729ly.net" title="良友电台" target="_blank">良友电台</a>
+   </p>
+</footer>
+
+<script>
+
+// Menu
+function myFunction() {
+  var x = document.getElementById("menu1");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshow
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 4 seconds
+}
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+</script>
+
+</body>
 </html>
-
