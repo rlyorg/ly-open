@@ -11,6 +11,7 @@ use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Http\Livewire\DataTable\WithBulkActions;
 use App\Http\Livewire\DataTable\WithPerPagePagination;
 use App\Models\Category;
+use Illuminate\Support\Facades\Artisan;
 
 class Programs extends Component
 {
@@ -111,7 +112,7 @@ class Programs extends Component
 
     public function sync()
     {
-        
+        Artisan::call('sync:program');
     }
 
 }

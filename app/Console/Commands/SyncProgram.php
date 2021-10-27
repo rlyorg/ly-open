@@ -64,7 +64,14 @@ class SyncProgram extends Command
                             'begin_at' =>  now(),
                         ]);
                     }else{
-                        $program->update(['name' => $item['title']]); //同步更新
+                        $program->update([
+                            'name' =>  $item['title'],
+                            'brief' =>  $item['series_brief'],
+                            'description' =>  strip_tags($item['series_description']),
+                            'email' =>  $item['emailto'],
+                            'sms_keyword' =>  $item['smsto'],
+                            'phone_open' =>  $item['phoneto'],
+                        ]); //同步更新
                     }
                 }
             }

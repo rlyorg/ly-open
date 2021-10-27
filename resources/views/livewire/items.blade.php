@@ -15,8 +15,7 @@
                     <option value="100">100</option>
                 </x-input.select>
             </x-input.group>
-            
-            <x-button.primary wire:click="create"><x-icon.plus /> New </x-button.primary>
+            <x-button.primary wire:click="sync"><x-icon.sync /> Sync </x-button.primary>
         </div>
     </div>
 
@@ -68,7 +67,6 @@
                         </x-table.cell>
 
                         <x-table.cell>
-                            <x-button.link wire:click="edit({{ $model->id }})">Edit</x-button.link>
                         </x-table.cell>
                     </x-table.row>
                 @empty

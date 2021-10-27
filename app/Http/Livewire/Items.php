@@ -107,4 +107,9 @@ class Items extends Component
             return $this->applyPagination($this->rowsQuery);
         });
     }
+
+    public function sync()
+    {
+        Artisan::call('ly:update');
+    }
 }

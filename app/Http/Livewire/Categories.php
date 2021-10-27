@@ -10,6 +10,7 @@ use App\Http\Livewire\DataTable\WithSorting;
 use App\Http\Livewire\DataTable\WithCachedRows;
 use App\Http\Livewire\DataTable\WithBulkActions;
 use App\Http\Livewire\DataTable\WithPerPagePagination;
+use Illuminate\Support\Facades\Artisan;
 
 class Categories extends Component
 {
@@ -102,7 +103,7 @@ class Categories extends Component
 
     public function sync()
     {
-        
+        Artisan::call('sync:category');
     }
 
 }
