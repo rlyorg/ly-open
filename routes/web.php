@@ -37,6 +37,7 @@ use App\Http\Livewire\Users;
 use App\Http\Livewire\UsersByRoles;
 use App\Http\Livewire\Roles;
 use App\Http\Livewire\Permissions;
+use App\Http\Livewire\Categories;
 
 
 use App\Http\Livewire\Programs;
@@ -45,17 +46,20 @@ use App\Http\Livewire\Items;
 use App\Jobs\GampQueue;
 
 // 后台配置 'namespace'=>'App\Http\Controllers',  'middleware' =>['auth:sanctum', 'verified', 
-Route::group(['prefix'=>'admin', 'as'=>'admin.','middleware' =>['role:super-admin']], function () {
-    Route::get('/users', Users::class)->name('users');
-    // list users by role
-    // Route::get('/users/{role}', UsersByRoles::class);
-    Route::get('/roles', Roles::class)->name('roles');
-    Route::get('/permissions', Permissions::class)->name('permissions');
-    Route::get('/programs', Programs::class)->name('programs');
-    Route::get('/items', Items::class)->name('items');
-
-});
-	
+// ->group(['prefix'=>'admin', 'as'=>'admin.','middleware' =>['role:super-admin']], function () { 
+Route::middleware(['auth:sanctum', 'verified',  'role:super-admin'])
+    ->prefix('admin')
+    ->as('admin.')
+    ->group(function () {
+        Route::get('/users', Users::class)->name('users');
+        // list users by role
+        // Route::get('/users/{role}', UsersByRoles::class);
+        Route::get('/roles', Roles::class)->name('roles');
+        Route::get('/permissions', Permissions::class)->name('permissions');
+        Route::get('/categories', Categories::class)->name('categories');
+        Route::get('/programs', Programs::class)->name('programs');
+        Route::get('/items', Items::class)->name('items');
+    });
 
 Route::get('search', function() {
     $query = '旷野'; // <-- Change the query for testing.

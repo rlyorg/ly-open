@@ -18,6 +18,11 @@
                 </div>
                 @role('super-admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.categories') }}" :active="request()->routeIs('admin.categories')">
+                        {{ __('Categories') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('admin.programs') }}" :active="request()->routeIs('admin.programs')">
                         {{ __('Programs') }}
                     </x-jet-nav-link>
