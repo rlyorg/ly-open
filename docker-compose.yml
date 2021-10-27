@@ -12,7 +12,7 @@ services:
       dockerfile: "Dockerfile"
     restart: unless-stopped
     ports:
-      - "8008:80"
+      - "8001:80"
     environment:
       CONTAINER_ROLE: app
       REDIS_PORT: 6379
@@ -31,6 +31,7 @@ services:
       - ./config:/var/www/html/config
       - ./resources:/var/www/html/resources
       - ./routes:/var/www/html/routes
+      - ./database:/var/www/html/database
       - ./storage/app:/var/www/html/storage/app
 
   meilisearch:
