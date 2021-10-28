@@ -88,7 +88,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function ($year,$code,$day) {
     // dispatchAfterResponse dispatchSync
     GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
 
-    return redirect()->away("https://lystore.yongbuzhixi.com/ly/audio/${year}/${code}/${day}.mp3");
+    return redirect()->away("https://729lyprog.net/ly/audio/${year}/${code}/${day}.mp3");
 });
 // LTS audio
 Route::get('/ly/audio/{code}/{day}.mp3', function ($code,$day) {
