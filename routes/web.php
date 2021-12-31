@@ -81,21 +81,26 @@ Route::get('/today', function () {
     return view('today');
 });
 
-
-Route::get('/ly/audio/{year}/{code}/{day}.mp3', function ($year,$code,$day) {
-    $request = request();
+use Illuminate\Support\Facades\Http;
+Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $year, $code, $day) {
+    $ip = $request->header('x-forwarded-for')??$request->ip();
+    $domain = 'https://lystore.yongbuzhixi.com';
+    $response = Http::get("https://ipapi.co/{$ip}/json/");
+    if($response->ok() && $response['country'] != "CN"){
+        $domain = "https://729lyprog.net";
+    }
     // $clientId, $category, $action, $label
     // dispatchAfterResponse dispatchSync
-    GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
+    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
 
-    return redirect()->away("https://lystore.yongbuzhixi.com/ly/audio/${year}/${code}/${day}.mp3");
+    return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
 });
 // LTS audio
-Route::get('/ly/audio/{code}/{day}.mp3', function ($code,$day) {
-    $request = request();
+Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day) {
+    $ip = $request->header('x-forwarded-for')??$request->ip();
     // $clientId, $category, $action, $label
     // dispatchAfterResponse dispatchSync
-    GampQueue::dispatchAfterResponse($request->ip(), $code, $day, 'audio');
+    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
 
     return redirect()->away("https://729lyprog.net/ly/audio/${code}/${day}.mp3");
 });
