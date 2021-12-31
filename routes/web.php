@@ -81,7 +81,7 @@ Route::get('/today', function () {
     return view('today');
 });
 
-use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
 Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $year, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
     $domain = 'https://lystore.yongbuzhixi.com';
