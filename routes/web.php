@@ -82,27 +82,27 @@ Route::get('/today', function () {
 });
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $year, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
     
-    $domain = 'https://lystore.yongbuzhixi.com';//Upyun CDN
-
-    $response = Http::get("https://ipapi.co/{$ip}/json/");
-    if($response->ok() && $response['country'] != "CN"){
-        $domain = "https://txly2.net";
+    $domains = [
+        'https://txly2.net', // 0
+        'https://lystore.yongbuzhixi.com', // 1
+    ];
+    $isCnIp = Cache::get('isCnIp.'.$ip, null);
+    if(is_null($isCnIp)){
+        $response = Http::get("https://ipapi.co/{$ip}/json/");
+        if($response->ok()){
+            $isCnIp = ($response['country'] == "CN")?1:0;
+            Cache::set('isCnIp.'.$ip, $isCnIp);
+            Log::debug('Cache', [$response['country'], $ip]);
+        }
     }
-    // $clientId, $category, $action, $label
-    // dispatchAfterResponse dispatchSync
-    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
-
+    $domain =  $domains[$isCnIp];
     return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
 });
 // LTS audio
 Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day) {
-    $ip = $request->header('x-forwarded-for')??$request->ip();
-    // $clientId, $category, $action, $label
-    // dispatchAfterResponse dispatchSync
-    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
-
     return redirect()->away("https://txly2.net/ly/audio/${code}/${day}.mp3");
 });
