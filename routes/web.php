@@ -100,9 +100,12 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
         }
     }
     $domain =  $domains[$isCnIp];
+    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
     return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
 });
 // LTS audio
 Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day) {
+    $ip = $request->header('x-forwarded-for')??$request->ip();
+    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
     return redirect()->away("https://txly2.net/ly/audio/${code}/${day}.mp3");
 });
