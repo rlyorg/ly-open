@@ -39,7 +39,7 @@ class InitMeta extends Command
         parent::__construct();
     }
 
-    private $url = "https://729ly.net";
+    private $url = "https://729ly.net/program";
     /**
      * Execute the console command.
      *

@@ -44,12 +44,7 @@ Route::group(['middleware' => ['track.api']], function () {
 
     Route::get('/program/{code}', function (Request $request, $code) {
         $program = Program::whereAlias($code)->firstOrFail();
-        if(in_array($code, ['ltsnp','ltsdp1','ltsdp2','ltshdp1','ltshdp2'])){
-            $orderField = 'updated_at';
-        }else{
-            $orderField = 'play_at';
-        }
-        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy($orderField,'desc')->simplePaginate(31));
+        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate(31));
     });
 
     Route::get('/program/{code}/{date}', function (Request $request, $code, $date) {
