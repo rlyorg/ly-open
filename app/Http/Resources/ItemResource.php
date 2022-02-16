@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\ProgramResource;
+// use Illuminate\Support\Str;
 
 class ItemResource extends JsonResource
 {
@@ -15,13 +16,18 @@ class ItemResource extends JsonResource
      */
     public function toArray($request)
     {
-        if($this->play_at){
+        if(!in_array($this->program->alias, ['ltsnp', 'ltsdp1', 'ltsdp2', 'ltshdp1', 'ltshdp2'])){
+        // if(!Str::startsWith($this->alias, 'ma')){
             $path = '/ly/audio/'. $this->play_at->format('Y') .'/' . $this->program->alias . '/' . $this->alias . '.mp3';
             $playAt = $this->play_at->format('ymd');
         }else{
             preg_match('/(\D+)(\d+)/', $this->alias, $matchs); //mavbm
             $path = '/ly/audio/'. $matchs[1] .'/' . $this->alias . '.mp3';
-            $playAt = $matchs[2];
+            if(!$this->play_at){
+                $playAt = $matchs[2];
+            }else{
+                $playAt = $this->play_at->format('ymd');
+            }
         }
         return [
             'id' => $this->id,

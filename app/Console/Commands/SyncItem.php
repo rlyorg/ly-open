@@ -73,8 +73,8 @@ class SyncItem extends Command
                         $programCode = $seriesMap[$seriesId]; // ltsnp
 
                     }else{
-                        $alias = $item['series_alias'];//cc or mavcy 
-                        $programCode = $alias; //cc
+                        $programCode = $item['series_alias']; //cc
+                        $alias = $item['series_alias'] . $playAt->format('ymd') ;//cc220217
                     }
                     // $map[$alias] = $seriesId; // hp => 489
                     $programId = $map[$programCode];
