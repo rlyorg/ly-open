@@ -49,13 +49,13 @@ class SyncItem extends Command
             $date = $this->argument('date') ?? date('Y-m-d');
 
             $url = 'https://txly2.net/index.php?option=com_vdata&task=get_feeds&type=vd6usermons42&column=sermon_publish_up&value='.$date;
-            // series_id => program_id
+            // bookmark_id => program_id
             $seriesMap = [
-                "193" => "ltsnp", // 良友圣经学院（启航课程）
-                "133" => "ltsdp1", // 良友圣经学院（圣工学士课程I：本科文凭课程）1
-                "210" => "ltsdp2", // 良友圣经学院（圣工学士课程I：本科文凭课程）2
-                "596" => "ltshdp1", // 良友圣经学院（圣工学士课程II：进深文凭课程）1
-                "194" => "ltshdp2", // 良友圣经学院（圣工学士课程II：进深文凭课程）2
+                "23-23" => "ltsnp", // 良友圣经学院（启航课程）
+                "18-18" => "ltsdp1", // 良友圣经学院（圣工学士课程I：本科文凭课程）1
+                "19-19" => "ltsdp2", // 良友圣经学院（圣工学士课程I：本科文凭课程）2
+                "21-21" => "ltshdp1", // 良友圣经学院（圣工学士课程II：进深文凭课程）1
+                "22-22" => "ltshdp2", // 良友圣经学院（圣工学士课程II：进深文凭课程）2
             ];
 
             $response = rescue(fn()=>Http::get($url), null, false);
@@ -64,7 +64,7 @@ class SyncItem extends Command
             if($response->ok() && $data = $response->json()){
                 foreach ($data as $item) {
                     $playAt = Carbon::parse($item['sermon_publish_up']);
-                    $seriesId = $item['series_id']; //193
+                    $seriesId = $item['bookmark_id']; //193 ：23-23
                     // if(Str::startsWith($item['alias'], 'ma')){
                     if($item['tag_id'] == '12') { //LTS
                         // $item['tag_id'] = 12 ;// Object { id: "12", title: "课程训练" }
@@ -85,7 +85,6 @@ class SyncItem extends Command
                         'description' => strip_tags($item['sermon_notes']),
                     ];
                     $pItem->update($updateData);
-                    Log::error(__CLASS__,[$pItem->toArray()]);
                 }
             }
         
