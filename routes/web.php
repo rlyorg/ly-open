@@ -97,6 +97,8 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
             $isCnIp = ($response['country'] == "CN")?1:0;
             Cache::set('isCnIp.'.$ip, $isCnIp);
             Log::debug('Cache', [$response['country'], $ip]);
+        }else{
+            $isCnIp = 1;
         }
     }
     $domain =  $domains[$isCnIp];
