@@ -72,6 +72,7 @@ class SyncProgram extends Command
                             'email' =>  $item['emailto'],
                             'sms_keyword' =>  $item['smsto'],
                             'phone_open' =>  $item['phoneto'],
+                            'category_id' =>  $category->id,
                         ]); //同步更新
                     }
                 }
