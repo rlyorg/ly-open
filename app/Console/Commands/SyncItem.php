@@ -65,15 +65,16 @@ class SyncItem extends Command
                 foreach ($data as $item) {
                     $playAt = Carbon::parse($item['sermon_publish_up']);
                     $seriesId = $item['bookmark_id']; //193 ：23-23
+                    $programCode = $item['series_alias']; //cc
                     // if(Str::startsWith($item['alias'], 'ma')){
-                    if($item['tag_id'] == '12') { //LTS
+                    // Undefined index: 15-536 dt 跟你脚踪 // vp 良院讲台 虽然属于12，但不同
+                    if($item['tag_id'] == '12' && !in_array($programCode,['dt','vp']) ) { //LTS
                         // $item['tag_id'] = 12 ;// Object { id: "12", title: "课程训练" }
                         preg_match('/([a-z]+\d+).mp3/', $item['url'], $matches);
                         $alias = $matches[1]; //mavbm002
-                        $programCode = $seriesMap[$seriesId]; // ltsnp
+                        $programCode = $seriesMap[$seriesId]; // ltsnp 
 
                     }else{
-                        $programCode = $item['series_alias']; //cc
                         $alias = $item['series_alias'] . $playAt->format('ymd') ;//cc220217
                     }
                     // $map[$alias] = $seriesId; // hp => 489
