@@ -86,6 +86,10 @@ use Illuminate\Support\Facades\Log;
 Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $year, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
     
+    $domain =  'https://txly2.net';
+    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
+    return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
+    
     $domains = [
         'https://txly2.net', // 0
         'https://lystore.yongbuzhixi.com', // 1
