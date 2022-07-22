@@ -60,7 +60,6 @@ class SyncItem extends Command
 
             $response = rescue(fn()=>Http::get($url), null, false);
             $map = Program::pluck('id','alias');
-            Log::error(__CLASS__,[$map]);
             if($response->ok() && $data = $response->json()){
                 foreach ($data as $item) {
                     $playAt = Carbon::parse($item['sermon_publish_up']);
