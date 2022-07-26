@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('sync:category')->dailyAt('0:05');
         $schedule->command('sync:program')->dailyAt('0:08');
         // $schedule->command('ly:update')->cron('10 0,5,10 * * *');
-        $schedule->command('ly:sync')->cron('1 0,5,10,12 * * *');
+        $schedule->command('ly:sync')->cron('1 0,5,10,18 * * *');
     }
 
     /**
