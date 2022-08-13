@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Carbon\Carbon;
 
 class Kernel extends ConsoleKernel
 {
@@ -30,6 +31,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('sync:program')->dailyAt('0:08');
         // $schedule->command('ly:update')->cron('10 0,5,10 * * *');
         $schedule->command('ly:sync')->cron('1 0,5,10,18 * * *');
+        $yesterday = Carbon::yesterday()->format('Y-m-d');
+        $schedule->command("ly:sync {$yesterday}")->cron('1 11 * * *');
     }
 
     /**
