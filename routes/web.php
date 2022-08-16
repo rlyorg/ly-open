@@ -114,5 +114,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
 Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
     GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
+    $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
+    return redirect()->away("{$domain}/lts/${code}/${day}.mp3");
     return redirect()->away("https://txly2.net/ly/audio/${code}/${day}.mp3");
 });
