@@ -32,6 +32,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/update', function () {
     return Artisan::call('ly:update');
 });
+// /sync/2022-12-31
+Route::get('/sync/{date}', function ($date) {
+    return Artisan::call('ly:sync '. $date);
+});
 
 Route::group(['middleware' => ['track.api']], function () {
     Route::get('/programs', function (Request $request) {
