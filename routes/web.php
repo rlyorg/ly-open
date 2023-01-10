@@ -89,26 +89,30 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
     $domain =  'https://txly2.net';
     $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
     GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
+    // 一些直播的節目，直接使用官網的連結
+    if(in_array($code, ['cc','dy','gf'])){
+        $domain =  'https://lpyy729.net';
+    }
     return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
     
-    $domains = [
-        'https://txly2.net', // 0
-        'https://lystore.yongbuzhixi.com', // 1
-    ];
-    $isCnIp = Cache::get('isCnIp.'.$ip, null);
-    if(is_null($isCnIp)){
-        $response = Http::get("https://ipapi.co/{$ip}/json/");
-        if($response->ok()){
-            $isCnIp = ($response['country'] == "CN")?1:0;
-            Cache::set('isCnIp.'.$ip, $isCnIp);
-            Log::debug('Cache', [$response['country'], $ip]);
-        }else{
-            $isCnIp = 1;
-        }
-    }
-    $domain =  $domains[$isCnIp];
-    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
-    return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
+    // $domains = [
+    //     'https://txly2.net', // 0
+    //     'https://lystore.yongbuzhixi.com', // 1
+    // ];
+    // $isCnIp = Cache::get('isCnIp.'.$ip, null);
+    // if(is_null($isCnIp)){
+    //     $response = Http::get("https://ipapi.co/{$ip}/json/");
+    //     if($response->ok()){
+    //         $isCnIp = ($response['country'] == "CN")?1:0;
+    //         Cache::set('isCnIp.'.$ip, $isCnIp);
+    //         Log::debug('Cache', [$response['country'], $ip]);
+    //     }else{
+    //         $isCnIp = 1;
+    //     }
+    // }
+    // $domain =  $domains[$isCnIp];
+    // GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
+    // return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
 });
 // LTS audio
 Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day) {
