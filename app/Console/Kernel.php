@@ -31,6 +31,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('sync:program')->dailyAt('0:08');
         // $schedule->command('ly:update')->cron('10 0,5,10 * * *');
         $schedule->command('ly:sync')->cron('1 0,10,12,16,18 * * *');
+        $schedule->command('ly:sync')->cron('10 11 * * *');
+        $schedule->command('ly:sync')->cron('40 16 * * *');
         $yesterday = Carbon::yesterday()->format('Y-m-d');
         $schedule->command("ly:sync {$yesterday}")->cron('1 11 * * *');
     }
