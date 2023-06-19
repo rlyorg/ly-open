@@ -10,6 +10,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "http-interop/http-factory-guzzle": "^1.0",
+        "influxdata/influxdb-client-php": "^3.3",
         "irazasyed/laravel-gamp": "^1.8",
         "laravel/framework": "^8.12",
         "laravel/horizon": "^5.7",

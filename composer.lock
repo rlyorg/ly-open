@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0a18c3c9e83555f8e81cd106c1d172d",
+    "content-hash": "8786fa9f8ef88c6bffcc686eef462f0a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1129,6 +1129,56 @@
                 "psr-7"
             ],
             "time": "2018-07-31T19:32:56+00:00"
+        },
+        {
+            "name": "influxdata/influxdb-client-php",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/influxdata/influxdb-client-php.git",
+                "reference": "80ee7e7fa455fe6321d24ac4f55c9596d43e08db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/influxdata/influxdb-client-php/zipball/80ee7e7fa455fe6321d24ac4f55c9596d43e08db",
+                "reference": "80ee7e7fa455fe6321d24ac4f55c9596d43e08db",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.2",
+                "php-http/client-common": "^2.2.1",
+                "php-http/discovery": "^1.9.1",
+                "psr/http-client": "^1.0.1"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^7.0.1",
+                "guzzlehttp/psr7": "^2.0.0",
+                "phpunit/phpunit": "^8.5.27",
+                "squizlabs/php_codesniffer": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "InfluxDB2\\": "src/InfluxDB2"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "InfluxDB (v2+) Client Library for PHP",
+            "homepage": "https://www.github.com/influxdata/influxdb-client-php",
+            "keywords": [
+                "influxdb"
+            ],
+            "support": {
+                "issues": "https://github.com/influxdata/influxdb-client-php/issues",
+                "source": "https://github.com/influxdata/influxdb-client-php/tree/3.3.0"
+            },
+            "time": "2023-03-29T20:21:08+00:00"
         },
         {
             "name": "irazasyed/laravel-gamp",
@@ -9333,5 +9383,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.3.0"
 }
