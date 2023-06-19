@@ -83,6 +83,7 @@ Route::get('/today', function () {
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Jobs\InfluxQueue;
 Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $year, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
     $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
