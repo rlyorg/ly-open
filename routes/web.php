@@ -85,40 +85,58 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $year, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
-    
-    $domain =  'https://txly2.net';
     $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
-    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
+    // GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
+
+    $url = $request->url();
+    $target = basename($url); //cc201221.mp3
+    
+    $tags = [];
     // 一些直播的節目，直接使用官網的連結
     if(in_array($code, ['cc','dy','gf'])){
         $domain =  'https://lpyy729.net';
     }
+    $tags['metric'] = 'lyOpen';
+    $tags['host'] = $domain;
+    $tags['keyword'] = $code;
+
+    $fields = [];
+    $fields['count'] = 1;
+    $fields['target'] = $target;
+    $fields['ip'] = $ip;
+
+    $protocolLine = [
+        'name' => 'click',
+        'tags' => $tags,
+        'fields' => $fields
+    ];
+    InfluxQueue::dispatchAfterResponse($protocolLine);
     return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
-    
-    // $domains = [
-    //     'https://txly2.net', // 0
-    //     'https://lystore.yongbuzhixi.com', // 1
-    // ];
-    // $isCnIp = Cache::get('isCnIp.'.$ip, null);
-    // if(is_null($isCnIp)){
-    //     $response = Http::get("https://ipapi.co/{$ip}/json/");
-    //     if($response->ok()){
-    //         $isCnIp = ($response['country'] == "CN")?1:0;
-    //         Cache::set('isCnIp.'.$ip, $isCnIp);
-    //         Log::debug('Cache', [$response['country'], $ip]);
-    //     }else{
-    //         $isCnIp = 1;
-    //     }
-    // }
-    // $domain =  $domains[$isCnIp];
-    // GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
-    // return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
 });
+
 // LTS audio
 Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day) {
     $ip = $request->header('x-forwarded-for')??$request->ip();
-    GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
     $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
+    $url = $request->url();
+    $target = basename($url); //cc201221.mp3
+    
+    $tags = [];
+    $tags['metric'] = 'lyOpen';
+    $tags['type'] = 'lts';
+    $tags['host'] = $domain;
+    $tags['keyword'] = $code;
+
+    $fields = [];
+    $fields['count'] = 1;
+    $fields['target'] = $target;
+    $fields['ip'] = $ip;
+
+        $protocolLine = [
+        'name' => 'click',
+        'tags' => $tags,
+        'fields' => $fields
+    ];
+    InfluxQueue::dispatchAfterResponse($protocolLine);
     return redirect()->away("{$domain}/lts/${code}/${day}.mp3");
-    return redirect()->away("https://txly2.net/ly/audio/${code}/${day}.mp3");
 });
