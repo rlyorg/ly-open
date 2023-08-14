@@ -113,7 +113,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
         'tags' => $tags,
         'fields' => $fields
     ];
-    InfluxQueue::dispatchAfterResponse($protocolLine);
+    // InfluxQueue::dispatchAfterResponse($protocolLine);
     return redirect()->away("{$domain}/ly/audio/${year}/${code}/${day}.mp3");
 });
 
@@ -142,6 +142,6 @@ Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day
         'tags' => $tags,
         'fields' => $fields
     ];
-    InfluxQueue::dispatchAfterResponse($protocolLine);
+    // InfluxQueue::dispatchAfterResponse($protocolLine);
     return redirect()->away("{$domain}/lts/${code}/${day}.mp3");
 });
