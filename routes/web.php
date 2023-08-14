@@ -88,7 +88,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
     $ip = $request->header('x-forwarded-for')??$request->ip();
     $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
     $domain =  'https://729lyprog.net';
-    $domain =  'https://txly2.net';
+    // $domain =  'https://txly2.net';
     // GampQueue::dispatchAfterResponse($ip, $code, $day, 'audio');
 
     $url = $request->url();
@@ -122,7 +122,7 @@ Route::get('/ly/audio/{code}/{day}.mp3', function (Request $request, $code, $day
     $ip = $request->header('x-forwarded-for')??$request->ip();
     $domain =  'https://d3ml8yyp1h3hy5.cloudfront.net';
     $domain =  'https://729lyprog.net';
-    $domain =  'https://txly2.net';
+    // $domain =  'https://txly2.net';
     $url = $request->url();
     $target = basename($url); //cc201221.mp3
     
