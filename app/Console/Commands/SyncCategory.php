@@ -32,7 +32,7 @@ class SyncCategory extends Command
     public function __construct()
     {
         parent::__construct();
-        $this->url = 'https://feed.lyapp3.net/index.php?option=com_vdata&task=get_feeds&type=vd6tags42';
+        $this->url = 'https://txly2.net/index.php?option=com_vdata&task=get_feeds&type=vd6tags42';
     }
 
     /**

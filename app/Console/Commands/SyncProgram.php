@@ -34,7 +34,7 @@ class SyncProgram extends Command
     public function __construct()
     {
         parent::__construct();
-        $this->url = 'https://feed.lyapp3.net/index.php?option=com_vdata&task=get_feeds&type=vd6useries42&column=tag_id&value=';
+        $this->url = 'https://txly2.net/index.php?option=com_vdata&task=get_feeds&type=vd6useries42&column=tag_id&value=';
     }
 
     /**
@@ -50,6 +50,7 @@ class SyncProgram extends Command
             if($response->successful()){
                 $data = $response->json();
                 foreach ($data as $item) {
+                    if(!isset())
                     $program = Program::where('alias', $item['alias'])->first();
                     $description = str_replace('\r\n&gt;&gt;&gt; 节目资源', '', strip_tags($item['series_description']));
                     if(!$program){
