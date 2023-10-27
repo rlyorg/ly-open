@@ -50,7 +50,6 @@ class SyncProgram extends Command
             if($response->successful()){
                 $data = $response->json();
                 foreach ($data as $item) {
-                    if(!isset())
                     $program = Program::where('alias', $item['alias'])->first();
                     $description = str_replace('\r\n&gt;&gt;&gt; 节目资源', '', strip_tags($item['series_description']));
                     if(!$program){
