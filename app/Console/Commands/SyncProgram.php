@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use App\Models\\Category;
+use App\Models\Category;
 use App\Models\Program;
 
 class SyncProgram extends Command
@@ -77,6 +77,7 @@ class SyncProgram extends Command
                     }
                 }
 
+
                 $newLyMetas = [
                     [
                         'code'=>'pm',
@@ -141,7 +142,7 @@ class SyncProgram extends Command
                 ];
                 foreach ($newLyMetas as $lyMeta) {
                     $program = Program::where('alias', $lyMeta['code'])->first();
-                    $program->update(['brief'=>$lyMeta['brief']]);
+                    $program->update(['brief' =>  $lyMeta['brief']]);
                 }
             }
         });
