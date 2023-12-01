@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'influx_token' => env('INFLUX_CLOUD_TOKEN', ''),
+    'influx_endpoint' => env('INFLUX_CLOUD_ENDPOINT', ''),
+    'influx_org' => env('INFLUX_CLOUD_ORG', ''),
+    'influx_bucket' => env('INFLUX_CLOUD_BUCKET', ''),
 
     /*
     |--------------------------------------------------------------------------

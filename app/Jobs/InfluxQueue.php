@@ -30,10 +30,11 @@ class InfluxQueue implements ShouldQueue
      */
     public function handle(): void
     {
-        $token = getenv('INFLUX_CLOUD_TOKEN');
-        $endpoint = getenv('INFLUX_CLOUD_ENDPOINT');
-        $org = getenv('INFLUX_CLOUD_ORG');
-        $bucket = getenv('INFLUX_CLOUD_BUCKET');
+        $token = config('app.influx_token');
+        $endpoint = config('app.influx_endpoint');
+        $org = config('app.influx_org');
+        $bucket = config('app.influx_bucket');
+
         $precision = WritePrecision::NS;
         $client = new Client([
             'url' => $endpoint,
