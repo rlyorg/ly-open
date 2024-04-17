@@ -42,7 +42,7 @@ class ItemResource extends JsonResource
             'description' => $this->description,
             'path' => $path,
             //TODO remove path later
-            'link' => config('app.url'). $path,
+            'link' => config('app.link_url'). $path,
         ];
     }
 }
