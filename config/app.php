@@ -5,7 +5,7 @@ return [
     'influx_endpoint' => env('INFLUX_CLOUD_ENDPOINT', ''),
     'influx_org' => env('INFLUX_CLOUD_ORG', ''),
     'influx_bucket' => env('INFLUX_CLOUD_BUCKET', ''),
-    'link_url' => env('APP_LINK_URL', 'https://open.1949ly.net'),
+    'link_url' => env('APP_LINK_URL', 'https://open.savefamily.today'),
 
     /*
     |--------------------------------------------------------------------------
