@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         // $schedule->command('ly:init')->dailyAt('0:05');
         $schedule->command('sync:category')->dailyAt('0:05');
-        $schedule->command('sync:program')->dailyAt('0:08');
+        // $schedule->command('sync:program')->dailyAt('0:08');
         // $schedule->command('ly:update')->cron('10 0,5,10 * * *');
         $schedule->command('ly:sync')->cron('1 0,10,12,16,18 * * *');
         $schedule->command('ly:sync')->cron('10 11 * * *');
