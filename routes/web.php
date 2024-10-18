@@ -97,7 +97,7 @@ Route::get('/ly/audio/{year}/{code}/{day}.mp3', function (Request $request, $yea
     $tags = [];
     // 一些直播的節目，直接使用官網的連結
     if(in_array($code, ['cc','dy','gf'])){
-        $domain =  'https://lpyy729.net';
+        $domain =  'https://z.lydt.work';
     }
     $tags['metric'] = 'lyOpen';
     $tags['host'] = $domain;
