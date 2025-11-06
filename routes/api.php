@@ -9,6 +9,7 @@ use App\Http\Resources\ItemResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use App\Services\GraphQLClient;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,35 +30,76 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // 手动调用，更新节目
 // TODO（如果0点自动获取节目出现问题，每天5点检查一遍）
 // TODO 使用vdata API
-Route::get('/update', function () {
-    return Artisan::call('ly:update');
-});
-// /sync/2022-12-31
-Route::get('/sync/{date}', function ($date) {
-    return Artisan::call('ly:sync '. $date);
-});
+// Route::get('/update', function () {
+//     return Artisan::call('ly:update');
+// });
+// // /sync/2022-12-31
+// Route::get('/sync/{date}', function ($date) {
+//     return Artisan::call('ly:sync '. $date);
+// });
 
 Route::group(['middleware' => ['track.api']], function () {
-    Route::get('/programs', function (Request $request) {
-        return ProgramResource::collection(Program::active()->get());
+    
+    /**
+     * 获取分类列表
+     */
+    Route::get('/categories', function (GraphQLClient $client) {
+        $data = $client->getCategories();
+
+        if (isset($data['error'])) {
+            return response()->json($data, 500);
+        }
+
+        return response()->json(['data' => $data]);
     });
 
-    Route::get('/today', function (Request $request) {
-        return ItemResource::collection(Item::where('play_at', now()->format('Y-m-d 00:00:00'))->inRandomOrder()->get());
+    /**
+     * 获取所有节目
+     */
+    Route::get('/programs', function (GraphQLClient $client) {
+        $data = $client->getPrograms();
+
+        if (isset($data['error'])) {
+            return response()->json($data, 500);
+        }
+
+        return response()->json(['data' => $data]);
     });
 
-    Route::get('/program/{code}', function (Request $request, $code) {
-        $program = Program::whereAlias($code)->firstOrFail();
-        return ItemResource::collection(Item::where('program_id', $program->id)->orderBy('play_at','desc')->simplePaginate(31));
+    /**
+     * 获取今天的项目
+     */
+    Route::get('/today', function (GraphQLClient $client) {
+        $data = $client->getTodayItems();
+
+        if (is_array($data) && isset($data['error'])) {
+            return response()->json($data, 500);
+        }
+
+        return response()->json(['data' => $data]);
     });
 
-    Route::get('/program/{code}/{date}', function (Request $request, $code, $date) {
-        $program = Program::whereAlias($code)->firstOrFail();
-        return ItemResource::collection(Item::where('program_id', $program->id)->where('play_at', $date)->get());
-    });
+    /**
+     * 获取单个节目详情
+     */
+    Route::get('/program/{code}', function (Request $request, GraphQLClient $client, $code) {
+        $data = $client->getProgramByCode($code);
 
-    Route::get('/categories', function (Request $request) {
-        return CategoryResource::collection(Category::with('programs')->get());
+        if (is_array($data) && isset($data['error'])) {
+            return response()->json($data, 500);
+        }
+
+        if (!$data) {
+            return response()->json(['error' => 'Program not found'], 404);
+        }
+
+        return response()->json($data['ly_items'] ?? []);
     });
 
 });
+
+
+    // Route::get('/program/{code}/{date}', function (Request $request, $code, $date) {
+        // $program = Program::whereAlias($code)->firstOrFail();
+        // return ItemResource::collection(Item::where('program_id', $program->id)->where('play_at', $date)->get());
+    // });
