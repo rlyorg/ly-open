@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class GraphQLClient
 {
@@ -176,6 +177,9 @@ class GraphQLClient
      */
     public function getProgramByCode($code)
     {
+        $isLts = Str::startsWith($code, 'lts');
+        $hasManyType = $isLts?"ltsItems":"lyItems";
+        $programType = $isLts?"ly_meta":"ly_meta";
         $query = <<<GQL
             {
               data:ly_meta_by_code(code: "$code") {
@@ -188,7 +192,7 @@ class GraphQLClient
                 end_at
                 remark
                 category
-                ly_items(first: 100) {
+                ly_items: $hasManyType (first:365) {
                   data {
                     id
                     alias
@@ -196,7 +200,7 @@ class GraphQLClient
                     play_at
                     path: novaMp3Path
                     link: path
-                    program: ly_meta {
+                    program: $programType {
                       id
                       name
                       code
