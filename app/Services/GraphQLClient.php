@@ -107,7 +107,15 @@ class GraphQLClient
             return ['error' => $result['error']];
         }
 
-        return $result['data']['data'] ?? [];
+        // return $result['data']['data'] ?? [];
+        $data = $result['data']['data'] ?? [];
+
+        // 过滤掉 end_at 不等于 null 的记录
+        $filtered = array_filter($data, function($item) {
+            return $item['end_at'] === null;
+        });
+
+        return $filtered;
     }
 
     /**
