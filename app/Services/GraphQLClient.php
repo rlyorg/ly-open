@@ -188,6 +188,7 @@ class GraphQLClient
         $isLts = Str::startsWith($code, 'lts');
         $hasManyType = $isLts?"ltsItems":"lyItems";
         $programType = $isLts?"ly_meta":"ly_meta";
+        $count = $isLts?30:365;
         $query = <<<GQL
             {
               data:ly_meta_by_code(code: "$code") {
@@ -200,7 +201,7 @@ class GraphQLClient
                 end_at
                 remark
                 category
-                ly_items: $hasManyType (first:365) {
+                ly_items: $hasManyType (first:$count) {
                   data {
                     id
                     alias
