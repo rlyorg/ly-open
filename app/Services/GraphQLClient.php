@@ -230,7 +230,22 @@ class GraphQLClient
         if (isset($result['error'])) {
             return ['error' => $result['error']];
         }
-
+        // 修改：如果是lts，则过滤30天内的内容
+        if($isLts) {
+            $items = $result['data']['data']['ly_items']['data'] ?? [];
+            $thirtyDaysAgo = now()->subDays(30);
+            
+            // 过滤出30天内的内容
+            $filteredItems = array_filter($items, function($item) use ($thirtyDaysAgo) {
+                // play_at 格式: "2025-11-25 00:00:00"
+                $playAt = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item['play_at']);
+                return $playAt->greaterThanOrEqualTo($thirtyDaysAgo);
+            });
+            
+            // 更新结果中的items和total计数
+            $result['data']['data']['ly_items']['data'] = array_values($filteredItems);
+            $result['data']['data']['ly_items']['paginatorInfo']['total'] = count($filteredItems);
+        }
         return $result['data']['data'] ?? null;
     }
 }
