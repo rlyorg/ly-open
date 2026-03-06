@@ -115,7 +115,9 @@ class GraphQLClient
             return $item['end_at'] === null;
         });
 
-        return $filtered;
+        // return $filtered; 
+        // 经过 array_filter 过滤掉部分元素后，剩下的元素键名还是原来的 1, 4, 6, ...。PHP 的 json_encode 发现键名不连续，就会把它编码成对象而非数组，所以出现了 {"1": {...}, "4": {...}, "6": {...}}
+        return array_values($filtered);
     }
 
     /**
